@@ -44,6 +44,7 @@ bool our::ShaderProgram::attach(const std::string &filename, GLenum type) const 
     
     // Here we check for compilation errors
     //DONE: Uncomment this if block
+    // to check for compilation errors
     if(std::string error = checkForShaderCompilationErrors(shaderID); error.size() != 0){
         std::cerr << "ERROR IN " << filename << std::endl;
         std::cerr << error << std::endl;

@@ -8,6 +8,8 @@ class ClearColorState: public our::State {
         //DONE: Read the color from the configuration file and use it to set the clear color for the window
         //HINT: you can the configuration for the whole application using "getApp()->getConfig()"
         //To see how the clear color is written in the json files, see "config/blue-screen.json"
+
+        //getting the confiduration from the json file
         const auto& config = getApp()->getConfig()["scene"]["clear-color"];
         // Tell openGl the settings (The color used while clearing the window)
         glClearColor((float)config.value("r",1.0),(float)config.value("g",1.0),(float)config.value("b",1.0),(float)config.value("a",1.0));
