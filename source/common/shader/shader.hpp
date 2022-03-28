@@ -28,6 +28,8 @@ namespace our {
 
         void use() { 
             //Done: call opengl to use the program identified by this->program
+            // input : program, the shader program object to use. This program object should be compiled and linked 
+            // sets the given program object as the current active shader program to use for subsequent drawing commands.
             glUseProgram(this->program);
         }
 
@@ -42,7 +44,7 @@ namespace our {
             //DONE: call opengl to set the value to the uniform defined by name
             //input : uniform  , the name of the uniform variable
             //        value    , the value to set to the uniform variable
-            // the function sets the unform varuable
+            // the function sets the uniform varuable
             glUniform1f(getUniformLocation(uniform) , value);
         }
 
@@ -84,6 +86,7 @@ namespace our {
         ShaderProgram (const ShaderProgram&) = delete;
         ShaderProgram& operator= (const ShaderProgram&) = delete;
         //Question: Why do we do this? Hint: Look at the deconstructor
+        //Answer: So that each shader program will have a unique id and thus no multiple shaders will be destroyed at once.
     };
 
 }

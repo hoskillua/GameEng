@@ -43,6 +43,7 @@ bool our::ShaderProgram::attach(const std::string &filename, GLenum type) const 
     //DONE: send the source code to the shader and compile it
     
     // Number of sources codes and array to them
+    // Replace the source code of shader object and compile it 
     glShaderSource(shaderID , 1 ,&sourceCStr , nullptr);
     glCompileShader(shaderID);
     

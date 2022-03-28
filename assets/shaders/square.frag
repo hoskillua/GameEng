@@ -11,9 +11,9 @@ uniform vec4 outside_color = vec4(0.0, 0.0, 0.0, 1.0);
 void main(){
     //DONE: Write code that will draw the square
     float dist = max(abs(gl_FragCoord.x-center[0]),abs(gl_FragCoord.y-center[1]));
-    if(dist <= side_length/2){
+    if(dist <= side_length/2){// if vertical distance and horizontal distance are both <= side_length/2, then it is inside
         frag_color = inside_color;
-    } else {
+    } else {// outside of square
         frag_color = outside_color;
     }
 }
