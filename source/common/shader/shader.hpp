@@ -19,7 +19,7 @@ namespace our {
         void create();
         void destroy();
 
-        //ShaderProgram(){ program = 0; }
+        ShaderProgram(){ program = 0; }
         ~ShaderProgram(){ destroy(); }
 
         bool attach(const std::string &filename, GLenum type) const;
@@ -80,10 +80,10 @@ namespace our {
         }
 
 
-        //TODO: Delete the copy constructor and assignment operator
-        //Question: Why do we do this? Hint: Look at the deconstructor 
-        // we need this as if we copied the shader program , and then deleted one of them by the id , opebgl will keep using the other one which will make an error
-        
+        //DONE: Delete the copy constructor and assignment operator
+        ShaderProgram (const ShaderProgram&) = delete;
+        ShaderProgram& operator= (const ShaderProgram&) = delete;
+        //Question: Why do we do this? Hint: Look at the deconstructor
     };
 
 }
