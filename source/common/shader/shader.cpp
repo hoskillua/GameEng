@@ -21,6 +21,10 @@ std::string checkForShaderCompilationErrors(GLuint shader);
 std::string checkForLinkingErrors(GLuint program);
 
 bool our::ShaderProgram::attach(const std::string &filename, GLenum type) const {
+
+    // input : filename  , the name of the shader txt file
+    //         type      , the type of the shader (GL_VERTEX_SHADER or GL_FRAGMENT_SHADER)
+
     // Here, we open the file and read a string from it containing the GLSL code of our shader
     // Open shader file
     std::ifstream file(filename);
@@ -64,6 +68,7 @@ bool our::ShaderProgram::attach(const std::string &filename, GLenum type) const 
 
 
 bool our::ShaderProgram::link() const {
+    // function that linkes the shader program
     //DONE: call opengl to link the program identified by this->program 
      glLinkProgram(this->program);
     // Here we check for linking errors
