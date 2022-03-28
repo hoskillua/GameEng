@@ -10,9 +10,9 @@ uniform vec4 outside_color = vec4(0.0, 0.0, 0.0, 1.0);
 
 void main(){
     //TODO: Write code that will draw the square
-    if(gl_FragCoord.y <= slope*gl_FragCoord.x + intercept ){
+    if(gl_FragCoord.y <= slope*gl_FragCoord.x + intercept ){ // if y is less than slope*x + intercept then the point is under the line , then inside_color
         frag_color = inside_color;
-    } else {
+    } else { // if y is greater than slope*x + intercept then the point is above the line , then outside_color
         frag_color = outside_color;
     }
 }
