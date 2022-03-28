@@ -28,8 +28,8 @@ namespace our {
 
         void use() { 
             //Done: call opengl to use the program identified by this->program
-            // input : program, the shader program object to use. This program object should be compiled and linked 
-            // sets the given program object as the current active shader program to use for subsequent drawing commands.
+            // input : program, the shader program reference to use. This program reference should be compiled and linked 
+            // sets the given program reference as the current active shader program to use for subsequent drawing commands.
             glUseProgram(this->program);
         }
 
@@ -86,7 +86,8 @@ namespace our {
         ShaderProgram (const ShaderProgram&) = delete;
         ShaderProgram& operator= (const ShaderProgram&) = delete;
         //Question: Why do we do this? Hint: Look at the deconstructor
-        //Answer: So that each shader program will have a unique id and thus no multiple shaders will be destroyed at once.
+        //Answer: So that no defaault copy or assignment constructors are created leading to each shader program pointing 
+        // to the same shader object and will be destroyed at once mistakenly.
     };
 
 }

@@ -11,7 +11,7 @@ void our::ShaderProgram::create() {
 }
 
 void our::ShaderProgram::destroy() {
-    //Delete Shader Program
+    //Delete Shader Program from gpu and reference is deleted from cpu
     if(program != 0) glDeleteProgram(program);
     program = 0;
 }
@@ -38,18 +38,23 @@ bool our::ShaderProgram::attach(const std::string &filename, GLenum type) const 
     const char* sourceCStr = sourceString.c_str();
     file.close();
 
+    // calling glCreateShader to allocate space in gpu for the shader
     GLuint shaderID = glCreateShader(type);
 
     //DONE: send the source code to the shader and compile it
     
     // Number of sources codes and array to them
-    // Replace the source code of shader object and compile it 
+    // send the source code of shader object and compile it 
+    // input:   shader: shader object whose source code is to be replaced.
+    //          count: number of elements in the string and length arrays.
+    //          string: array of pointers to strings containing the source code to be loaded into the shader.
+    //          length: array of string lengths.
     glShaderSource(shaderID , 1 ,&sourceCStr , nullptr);
     glCompileShader(shaderID);
     
     // Here we check for compilation errors
     //DONE: Uncomment this if block
-    // to check for compilation errors
+    // to check for compilation errors and dealocate shader from gpu if any.
     if(std::string error = checkForShaderCompilationErrors(shaderID); error.size() != 0){
         std::cerr << "ERROR IN " << filename << std::endl;
         std::cerr << error << std::endl;
@@ -69,8 +74,9 @@ bool our::ShaderProgram::attach(const std::string &filename, GLenum type) const 
 
 
 bool our::ShaderProgram::link() const {
-    // function that linkes the shader program
+    // function that links the shader program
     //DONE: call opengl to link the program identified by this->program 
+    // Assembles frog shader, Vertex shader into a single program
      glLinkProgram(this->program);
     // Here we check for linking errors
     //DONE: Uncomment this if block

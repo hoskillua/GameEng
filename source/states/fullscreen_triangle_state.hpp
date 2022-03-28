@@ -44,6 +44,7 @@ class FullscreenTriangleState : public our::State
         // We loop over every uniform in the configuration and send to the program
         if (const auto &uniforms = config["uniforms"]; uniforms.is_object())
         {
+            // check the type of each variable and send to GPU accordingly
             for (auto &[name, uniform] : uniforms.items())
             {
                 std::string type = uniform.value("type", "");
@@ -66,6 +67,7 @@ class FullscreenTriangleState : public our::State
         }
 
         // DONE: Create a vertex Array
+        // Allocate space in gpu for vertex array object and use it.
         glGenVertexArrays(1, &VAO);
         glBindVertexArray(VAO);
         // We set the clear color to be black
