@@ -19,7 +19,7 @@ namespace our {
         void create();
         void destroy();
 
-        //ShaderProgram(){ program = 0; }
+        ShaderProgram(){ program = 0; }
         ~ShaderProgram(){ destroy(); }
 
         bool attach(const std::string &filename, GLenum type) const;
@@ -57,7 +57,9 @@ namespace our {
         }
 
 
-        //TODO: Delete the copy constructor and assignment operator
+        //DONE: Delete the copy constructor and assignment operator
+        ShaderProgram (const ShaderProgram&) = delete;
+        ShaderProgram& operator= (const ShaderProgram&) = delete;
         //Question: Why do we do this? Hint: Look at the deconstructor
     };
 
