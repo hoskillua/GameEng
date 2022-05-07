@@ -1,0 +1,5 @@
+D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/build/CMakeFiles/GAME_APPLICATION.dir
+D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/build/CMakeFiles/ALL_BUILD.dir
+D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/build/CMakeFiles/ZERO_CHECK.dir
+D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/build/vendor/glfw/CMakeFiles/ALL_BUILD.dir
+D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/build/vendor/glfw/src/CMakeFiles/glfw.dir

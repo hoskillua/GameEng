@@ -1,0 +1,18 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.21/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
+C:/Program Files/CMake/share/cmake-3.21/Modules/CMakeDependentOption.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CMakePackageConfigHelpers.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFile.c.in
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/FindThreads.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/GNUInstallDirs.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/Internal/CheckSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/WriteBasicConfigVersionFile.cmake
+D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/vendor/glfw/CMakeLists.txt
+D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/vendor/glfw/src/glfw3.pc.in
+D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/vendor/glfw/src/glfw3Config.cmake.in
+D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/vendor/glfw/src/glfw_config.h.in
