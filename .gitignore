@@ -29,6 +29,6 @@ screenshots/
 
 *
 
-!/source/*
-!/assets/*
+!*/source/*
+!*/assets/*
 
