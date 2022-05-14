@@ -14,4 +14,5 @@ namespace our {
         set(GL_TEXTURE_MAX_ANISOTROPY_EXT, data.value("MAX_ANISOTROPY", 1.0f));
         set(GL_TEXTURE_BORDER_COLOR, data.value("BORDER_COLOR", glm::vec4(0, 0, 0, 0)));
     }
+
 }

@@ -12,30 +12,30 @@ namespace our {
         if(config.contains("sky")){
             // First, we create a sphere which will be used to draw the sky
             this->skySphere = mesh_utils::sphere(glm::ivec2(16, 16));
-
+            
             // We can draw the sky using the same shader used to draw textured objects
             ShaderProgram* skyShader = new ShaderProgram();
             skyShader->attach("assets/shaders/textured.vert", GL_VERTEX_SHADER);
             skyShader->attach("assets/shaders/textured.frag", GL_FRAGMENT_SHADER);
             skyShader->link();
-
+            
             //TODO: (Req 9) Pick the correct pipeline state to draw the sky
             // Hints: the sky will be draw after the opaque objects so we would need depth testing but which depth funtion should we pick?
             // We will draw the sphere from the inside, so what options should we pick for the face culling.
             PipelineState skyPipelineState{};
-
+            
             // Load the sky texture (note that we don't need mipmaps since we want to avoid any unnecessary blurring while rendering the sky)
             std::string skyTextureFile = config.value<std::string>("sky", "");
             Texture2D* skyTexture = texture_utils::loadImage(skyTextureFile, false);
 
-            // Setup a sampler for the sky
+            // Setup a sampler for the sky 
             Sampler* skySampler = new Sampler();
             skySampler->set(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
             skySampler->set(GL_TEXTURE_MAG_FILTER, GL_LINEAR);
             skySampler->set(GL_TEXTURE_WRAP_S, GL_REPEAT);
             skySampler->set(GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-            // Combine all the aforementioned objects (except the mesh) into a material
+            // Combine all the aforementioned objects (except the mesh) into a material 
             this->skyMaterial = new TexturedMaterial();
             this->skyMaterial->shader = skyShader;
             this->skyMaterial->texture = skyTexture;
@@ -53,9 +53,9 @@ namespace our {
             //TODO: (Req 10) Create a color and a depth texture and attach them to the framebuffer
             // Hints: The color format can be (Red, Green, Blue and Alpha components with 8 bits for each channel).
             // The depth format can be (Depth component with 24 bits).
-
+            
             //TODO: (Req 10) Unbind the framebuffer just to be safe
-
+            
             // Create a vertex array to use for drawing the texture
             glGenVertexArrays(1, &postProcessVertexArray);
 
@@ -135,27 +135,21 @@ namespace our {
 
         //TODO: (Req 8) Modify the following line such that "cameraForward" contains a vector pointing the camera forward direction
         // HINT: See how you wrote the CameraComponent::getViewMatrix, it should help you solve this one
-        glm::vec3 cameraForward = glm::vec3(camera->getOwner()->getLocalToWorldMatrix() * glm::vec4(0, 0, -1, 0));
-
+        glm::vec3 cameraForward = glm::vec3(0.0, 0.0, 0.0);
         std::sort(transparentCommands.begin(), transparentCommands.end(), [cameraForward](const RenderCommand& first, const RenderCommand& second){
             //TODO: (Req 8) Finish this function
-            // HINT: the following return should return true "first" should be drawn before "second".
-            return glm::distance(cameraForward, first.center) > glm::distance(cameraForward, second.center);
+            // HINT: the following return should return true "first" should be drawn before "second". 
+            return false;
         });
 
         //TODO: (Req 8) Get the camera ViewProjection matrix and store it in VP
-        glm::mat4 VP = camera->getProjectionMatrix(windowSize) * camera->getViewMatrix();
+        glm::mat4 VP = glm::mat4(1.0f);
         //TODO: (Req 8) Set the OpenGL viewport using windowSize
-        glViewport(0, 0, windowSize.x, windowSize.y);
 
         //TODO: (Req 8) Set the clear color to black and the clear depth to 1
-        glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-        glClearDepth(1);
-
+        
         //TODO: (Req 8) Set the color mask to true and the depth mask to true (to ensure the glClear will affect the framebuffer)
-        glColorMask(true, true, true, true);
-        glDepthMask(true);
-
+        
 
         // If there is a postprocess material, bind the framebuffer
         if(postprocessMaterial){
@@ -164,22 +158,14 @@ namespace our {
         }
 
         //TODO: (Req 8) Clear the color and depth buffers
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+        
         //TODO: (Req 8) Draw all the opaque commands
         // Don't forget to set the "transform" uniform to be equal the model-view-projection matrix for each render command
-        // HINT: You can use the following code to set the uniform:
-        for(auto command : opaqueCommands){
-            command.material->setup();
-            command.material->shader->set("transform", VP * command.localToWorld);
-            command.material->transparent = false;
-            command.mesh->draw();
-        }
-
+        
         // If there is a sky material, draw the sky
         if(this->skyMaterial){
             //TODO: (Req 9) setup the sky material
-
+            
             //TODO: (Req 9) Get the camera position
 
             //TODO: (Req 9) Create a model matrix for the sy such that it always follows the camera (sky sphere center = camera position)
@@ -194,25 +180,20 @@ namespace our {
                 0.0f, 0.0f, 0.0f, 1.0f  // Column4
             );
             //TODO: (Req 9) set the "transform" uniform
-
+            
             //TODO: (Req 9) draw the sky sphere
-
+            
         }
         //TODO: (Req 8) Draw all the transparent commands
         // Don't forget to set the "transform" uniform to be equal the model-view-projection matrix for each render command
-        for(auto command : transparentCommands){
-            command.material->setup();
-            command.material->shader->set("transform", VP * command.localToWorld);
-            command.material->transparent = true;
-            command.mesh->draw();
-        }
+        
 
         // If there is a postprocess material, apply postprocessing
         if(postprocessMaterial){
             //TODO: (Req 10) Return to the default framebuffer
-
+            
             //TODO: (Req 10) Setup the postprocess material and draw the fullscreen triangle
-
+            
         }
     }
 

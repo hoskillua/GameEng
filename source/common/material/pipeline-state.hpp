@@ -47,7 +47,7 @@ namespace our {
                 glCullFace(faceCulling.culledFace);
                 glFrontFace(faceCulling.frontFace);
             } else {
-                glDisable(GL_CULL_FACE);
+                glDisable(GL_CULL_FACE); 
             }
 
             if (depthTesting.enabled) {
