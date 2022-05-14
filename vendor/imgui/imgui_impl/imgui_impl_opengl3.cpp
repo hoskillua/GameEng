@@ -50,7 +50,6 @@
 //  2016-09-05: OpenGL: Fixed save and restore of current scissor rectangle.
 //  2016-07-29: OpenGL: Explicitly setting GL_UNPACK_ROW_LENGTH to reduce issues because SDL changes it. (#752)
 
-#include <glad/gl.h>          // Needs to be initialized with gladLoadGL(...) or gladLoaderLoadGL() in user's code.
 //----------------------------------------
 // OpenGL    GLSL      GLSL
 // version   version   string
@@ -99,8 +98,8 @@
 //  You may use another loader/header of your choice (glext, glLoadGen, etc.), or chose to manually implement your own.
 #if defined(IMGUI_IMPL_OPENGL_LOADER_GL3W)
 #include <GL/gl3w.h>            // Needs to be initialized with gl3wInit() in user's code
-// #elif defined(IMGUI_IMPL_OPENGL_LOADER_GLEW)
-// #include <GL/glew.h>            // Needs to be initialized with glewInit() in user's code.
+#elif defined(IMGUI_IMPL_OPENGL_LOADER_GLEW)
+#include <GL/glew.h>            // Needs to be initialized with glewInit() in user's code.
 #elif defined(IMGUI_IMPL_OPENGL_LOADER_GLAD)
 #include <glad/glad.h>          // Needs to be initialized with gladLoadGL() in user's code.
 #elif defined(IMGUI_IMPL_OPENGL_LOADER_GLAD2)
@@ -120,7 +119,7 @@ using namespace gl;
 #include <glbinding/gl/gl.h>
 using namespace gl;
 #else
-//#include IMGUI_IMPL_OPENGL_LOADER_CUSTOM
+#include IMGUI_IMPL_OPENGL_LOADER_CUSTOM
 #endif
 #endif
 
