@@ -4,8 +4,6 @@ cmake-build-*/
 build/
 out/
 bin/
-GAME_APPLICATION.dir/
-ALL_BUILD*
 
 # imgui saved state
 imgui.ini
@@ -25,10 +23,3 @@ CMakeSettings.json
 
 # Screenshots
 screenshots/
-
-
-*
-
-!*/source/*
-!*/assets/*
-

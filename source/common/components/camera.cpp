@@ -23,7 +23,7 @@ namespace our {
     glm::mat4 CameraComponent::getViewMatrix() const {
         auto owner = getOwner();
         auto M = owner->getLocalToWorldMatrix();
-        //TODO: (Req 7) Complete this function
+        //DONE: (Req 7) Complete this function
         //HINT:
         // In the camera space:
         // - eye is the origin (0,0,0)
@@ -35,27 +35,40 @@ namespace our {
         // - the center position which is the point (0,0,-1) but after being transformed by M
         // - the up direction which is the vector (0,1,0) but after being transformed by M
         // then you can use glm::lookAt
-
-        glm::vec3 eye = M * glm::vec4(0,0,0,1);
-        glm::vec3 center = M * glm::vec4(0,0,-1,1);
-        glm::vec3 up = M * glm::vec4(0,1,0,1);
-        return glm::lookAt(eye, center, up);
+        glm::vec3 eye = glm::vec3(0,0,0);
+        glm::vec3 center = glm::vec3(0,0,-1);
+        glm::vec3 up = glm::vec3(0,1,0);
+        glm::vec3 eyePos = glm::vec3(M * glm::vec4(eye, 1));
+        glm::vec3 centerPos = glm::vec3(M * glm::vec4(center, 1));
+        glm::vec3 upDir = glm::vec3(M * glm::vec4(up, 0));
+        return glm::lookAt(eyePos, centerPos, upDir);
     }
 
     // Creates and returns the camera projection matrix
     // "viewportSize" is used to compute the aspect ratio
     glm::mat4 CameraComponent::getProjectionMatrix(glm::ivec2 viewportSize) const {
-        //TODO: (Req 7) Wrtie this function
+        //DONE: (Req 7) Wrtie this function
         // NOTE: The function glm::ortho can be used to create the orthographic projection matrix
         // It takes left, right, bottom, top. Bottom is -orthoHeight/2 and Top is orthoHeight/2.
         // Left and Right are the same but after being multiplied by the aspect ratio
         // For the perspective camera, you can use glm::perspective
-        float aspectRatio = viewportSize.x / (float)viewportSize.y;
-
-        if (cameraType == CameraType::ORTHOGRAPHIC) {
-            return glm::ortho(-orthoHeight / 2 * aspectRatio, orthoHeight / 2 * aspectRatio, -orthoHeight / 2, orthoHeight / 2, near, far);
+        float aspectRatio = (float)viewportSize.x / (float)viewportSize.y;
+        if(cameraType == CameraType::PERSPECTIVE){
+            return glm::perspective(
+                fovY, // field of view in y direction
+             aspectRatio, // aspect ratio
+             near, // near plane
+              far // far plane
+              );
         } else {
-            return glm::perspective(fovY, aspectRatio, near, far);
+            return glm::ortho(
+                -orthoHeight / 2 * aspectRatio, // left
+                orthoHeight / 2 * aspectRatio, // right
+                -orthoHeight / 2, // bottom
+                orthoHeight / 2 // top
+                );
         }
     }
+       
+    
 }
