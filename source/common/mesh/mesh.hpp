@@ -40,6 +40,7 @@ namespace our {
             glBindBuffer(GL_ARRAY_BUFFER, VBO);
             glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(Vertex), &vertices[0], GL_STATIC_DRAW);
             glEnableVertexAttribArray(ATTRIB_LOC_POSITION); // Enable the position attribute
+            // Tell the vertex attribute how to get the position data out of the vertex buffer
             glVertexAttribPointer( // Define the position attribute
                 ATTRIB_LOC_POSITION, // Location
                 3, // Number of components
@@ -90,7 +91,12 @@ namespace our {
         {
             //DONE: (Req 1) Write this function
             glBindVertexArray(VAO);
-            glDrawElements(GL_TRIANGLES, elementCount, GL_UNSIGNED_INT, 0);
+            glDrawElements(
+                GL_TRIANGLES, // mode
+                elementCount,  // count
+                GL_UNSIGNED_INT, // type
+             0 // element array buffer offset
+             );
             
         }
 
