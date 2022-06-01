@@ -7,12 +7,16 @@ namespace our {
 
     // This function computes and returns a matrix that represents this transform
     // Remember that the order of transformations is: Scaling, Rotation then Translation
+
     // HINT: to convert euler angles to a rotation matrix, you can use glm::yawPitchRoll
+   
     glm::mat4 Transform::toMat4() const {
-        auto scaMat = glm::scale(glm::mat4(1.0f), scale);
-        auto rotMat = glm::yawPitchRoll(rotation.y, rotation.x, rotation.z) * scaMat;
-        auto traMat = glm::translate(glm::mat4(1.0f), position) * rotMat;
-        return traMat;
+
+        glm::mat4 translation = glm::translate(glm::mat4(1.0f), position);
+        glm::mat4 rotate = glm::yawPitchRoll(rotation.y, rotation.x, rotation.z);
+        glm::mat4 scalemat = glm::scale(glm::mat4(1.0f), scale);
+        return translation * rotate * scalemat;
+
     }
 
      // Deserializes the entity data and components from a json object

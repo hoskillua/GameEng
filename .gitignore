@@ -27,10 +27,3 @@ CMakeSettings.json
 
 # Screenshots
 screenshots/
-
-
-*
-
-!*/source/*
-!*/assets/*
-

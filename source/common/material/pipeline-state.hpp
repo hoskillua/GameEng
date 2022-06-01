@@ -40,23 +40,22 @@ namespace our {
 
         // This function should set the OpenGL options to the values specified by this structure
         // For example, if faceCulling.enabled is true, you should call glEnable(GL_CULL_FACE), otherwise, you should call glDisable(GL_CULL_FACE)
+
         void setup() const {
-            //TODO: (Req 3) Write this function
+            //DONE: (Req 3) Write this function
             if (faceCulling.enabled) {
                 glEnable(GL_CULL_FACE);
                 glCullFace(faceCulling.culledFace);
                 glFrontFace(faceCulling.frontFace);
             } else {
-                glDisable(GL_CULL_FACE); 
+                glDisable(GL_CULL_FACE);
             }
-
             if (depthTesting.enabled) {
                 glEnable(GL_DEPTH_TEST);
                 glDepthFunc(depthTesting.function);
             } else {
                 glDisable(GL_DEPTH_TEST);
-            }
-
+            } 
             if (blending.enabled) {
                 glEnable(GL_BLEND);
                 glBlendEquation(blending.equation);
@@ -65,10 +64,8 @@ namespace our {
             } else {
                 glDisable(GL_BLEND);
             }
-
-            glColorMask(colorMask.r, colorMask.g, colorMask.b, colorMask.a);
-            glDepthMask(depthMask);
-
+            glColorMask(colorMask.r, colorMask.g, colorMask.b, colorMask.a);   // enable/disable writing colors in the frame buffer. (e.g. if cause red to stay red in all frames)
+            glDepthMask(depthMask); // enable/disable writing to the depth buffer. 
 
 
         }
