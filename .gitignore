@@ -8,6 +8,8 @@ GAME_APPLICATION.dir/
 ALL_BUILD*
 **/CMakeCache.txt
 **/CMakeFiles
+**/vendor
+**/glfw
 
 # imgui saved state
 imgui.ini
