@@ -6,6 +6,8 @@ out/
 bin/
 GAME_APPLICATION.dir/
 ALL_BUILD*
+**/CMakeCache.txt
+**/CMakeFiles
 
 # imgui saved state
 imgui.ini

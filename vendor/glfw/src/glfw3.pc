@@ -1,13 +1,13 @@
-prefix=C:/Program Files (x86)/GFX-LAB
+prefix=/usr/local
 exec_prefix=${prefix}
-includedir=C:/Program Files (x86)/GFX-LAB/include
-libdir=C:/Program Files (x86)/GFX-LAB/lib
+includedir=/usr/local/include
+libdir=/usr/local/lib
 
 Name: GLFW
 Description: A multi-platform library for OpenGL, window and input
 Version: 3.3.2
 URL: https://www.glfw.org/
-Requires.private: 
+Requires.private:  x11
 Libs: -L${libdir} -lglfw3
-Libs.private:  -lgdi32
+Libs.private:  -lrt -lm -ldl
 Cflags: -I${includedir}
