@@ -35,9 +35,9 @@
 //========================================================================
 
 // Define this to 1 if building GLFW for X11
-/* #undef _GLFW_X11 */
+#define _GLFW_X11
 // Define this to 1 if building GLFW for Win32
-#define _GLFW_WIN32
+/* #undef _GLFW_WIN32 */
 // Define this to 1 if building GLFW for Cocoa
 /* #undef _GLFW_COCOA */
 // Define this to 1 if building GLFW for Wayland
@@ -51,7 +51,7 @@
 /* #undef _GLFW_VULKAN_STATIC */
 
 // Define this to 1 to force use of high-performance GPU on hybrid systems
-#define _GLFW_USE_HYBRID_HPG
+/* #undef _GLFW_USE_HYBRID_HPG */
 
 // Define this to 1 if xkbcommon supports the compose key
 /* #undef HAVE_XKBCOMMON_COMPOSE_H */

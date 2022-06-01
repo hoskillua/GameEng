@@ -4,6 +4,12 @@ cmake-build-*/
 build/
 out/
 bin/
+GAME_APPLICATION.dir/
+ALL_BUILD*
+**/CMakeCache.txt
+**/CMakeFiles
+**/vendor
+**/glfw
 
 # imgui saved state
 imgui.ini
@@ -23,3 +29,4 @@ CMakeSettings.json
 
 # Screenshots
 screenshots/
+vendor/glfw/cmake_uninstall.cmake
