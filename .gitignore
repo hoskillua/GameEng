@@ -27,3 +27,4 @@ CMakeSettings.json
 
 # Screenshots
 screenshots/
+vendor/glfw/cmake_uninstall.cmake
