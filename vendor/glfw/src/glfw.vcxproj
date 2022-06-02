@@ -22,9 +22,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{7F0D5CAF-1A3B-3B96-B55D-07FEADE55221}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <ProjectGuid>{5603631E-2EC8-3E44-BD37-CE71528C9C20}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
     <ProjectName>glfw</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
@@ -59,26 +59,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">glfw.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">glfw3</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">glfw.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">glfw3</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">glfw.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">glfw3</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">glfw.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">glfw3</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include;C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -95,10 +95,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_GLFW_USE_CONFIG_H;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include;C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include;C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -111,7 +111,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include;C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -128,10 +128,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_GLFW_USE_CONFIG_H;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include;C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include;C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -144,7 +144,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include;C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -161,10 +161,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_GLFW_USE_CONFIG_H;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include;C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include;C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -177,7 +177,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include;C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>
@@ -193,10 +193,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_GLFW_USE_CONFIG_H;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include;C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src;D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include;C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -208,11 +208,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\CMakeLists.txt">
-      <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/vendor/glfw/src/CMakeLists.txt</Message>
+    <CustomBuild Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\CMakeLists.txt">
+      <StdOutEncoding>UTF-8</StdOutEncoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version" "-BD:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/build" --check-stamp-file "D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/build/vendor/glfw/src/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw" "-BC:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw" --check-stamp-file "C:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw/src/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -221,11 +221,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/vendor/glfw/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version" "-BD:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/build" --check-stamp-file "D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/build/vendor/glfw/src/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw" "-BC:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw" --check-stamp-file "C:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw/src/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -234,11 +234,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/vendor/glfw/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version" "-BD:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/build" --check-stamp-file "D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/build/vendor/glfw/src/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw" "-BC:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw" --check-stamp-file "C:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw/src/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -247,11 +247,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/vendor/glfw/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version" "-BD:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/build" --check-stamp-file "D:/Anime/CMPN205 Phase 2+3 - Student Version(2)/CMPN205 Phase 2+3 - Student Version/build/vendor/glfw/src/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw" "-BC:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw" --check-stamp-file "C:/Users/LENOVO/Desktop/New GameEng/GameEng/vendor/glfw/src/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -260,40 +260,40 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\context.c" />
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\init.c" />
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\input.c" />
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\monitor.c" />
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\vulkan.c" />
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\window.c" />
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_init.c" />
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_joystick.c" />
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_monitor.c" />
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_time.c" />
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_thread.c" />
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_window.c" />
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\wgl_context.c" />
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\egl_context.c" />
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\osmesa_context.c" />
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\internal.h" />
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\mappings.h" />
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src\glfw_config.h" />
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include\GLFW\glfw3.h" />
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include\GLFW\glfw3native.h" />
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_platform.h" />
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_joystick.h" />
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\wgl_context.h" />
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\egl_context.h" />
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\osmesa_context.h" />
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\context.c" />
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\init.c" />
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\input.c" />
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\monitor.c" />
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\vulkan.c" />
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\window.c" />
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_init.c" />
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_joystick.c" />
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_monitor.c" />
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_time.c" />
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_thread.c" />
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_window.c" />
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\wgl_context.c" />
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\egl_context.c" />
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\osmesa_context.c" />
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\internal.h" />
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\mappings.h" />
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\glfw_config.h" />
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include\GLFW\glfw3.h" />
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include\GLFW\glfw3native.h" />
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_platform.h" />
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_joystick.h" />
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\wgl_context.h" />
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\egl_context.h" />
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\osmesa_context.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\ZERO_CHECK.vcxproj">
-      <Project>{D2866B11-DF32-3737-895A-C2993777C71B}</Project>
+    <ProjectReference Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\ZERO_CHECK.vcxproj">
+      <Project>{64707894-E4B5-358D-B431-791276C1E2C2}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

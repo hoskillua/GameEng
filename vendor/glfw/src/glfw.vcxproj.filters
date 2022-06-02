@@ -1,93 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\context.c">
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\context.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\init.c">
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\init.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\input.c">
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\input.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\monitor.c">
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\monitor.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\vulkan.c">
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\vulkan.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\window.c">
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\window.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_init.c">
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_init.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_joystick.c">
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_joystick.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_monitor.c">
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_monitor.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_time.c">
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_time.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_thread.c">
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_thread.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_window.c">
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_window.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\wgl_context.c">
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\wgl_context.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\egl_context.c">
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\egl_context.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\osmesa_context.c">
+    <ClCompile Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\osmesa_context.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\internal.h">
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\internal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\mappings.h">
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\mappings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\build\vendor\glfw\src\glfw_config.h">
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\glfw_config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include\GLFW\glfw3.h">
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include\GLFW\glfw3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\include\GLFW\glfw3native.h">
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\include\GLFW\glfw3native.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_platform.h">
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_platform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\win32_joystick.h">
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\win32_joystick.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\wgl_context.h">
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\wgl_context.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\egl_context.h">
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\egl_context.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\osmesa_context.h">
+    <ClInclude Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\osmesa_context.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Anime\CMPN205 Phase 2+3 - Student Version(2)\CMPN205 Phase 2+3 - Student Version\vendor\glfw\src\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\LENOVO\Desktop\New GameEng\GameEng\vendor\glfw\src\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{BF847B98-722E-3CEE-90A9-564E0AEDF794}</UniqueIdentifier>
+      <UniqueIdentifier>{4A96E79A-0C65-3F75-A360-7D5C53EB82F5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{7F4569B3-5555-365F-8E7C-7A7BD78377B2}</UniqueIdentifier>
+      <UniqueIdentifier>{C4234966-2DEE-355C-A1AB-8B6EA150B6DC}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
