@@ -16,7 +16,7 @@ namespace our
 {
 
     // The free camera controller system is responsible for moving every entity which contains a FreeCameraControllerComponent.
-    // This system is added as a slightly complex example for how use the ECS framework to implement logic. 
+    // This system is added as a slightly complex example for how use the ECS framework to implement logic.
     // For more information, see "common/components/free-camera-controller.hpp"
     class FreeCameraControllerSystem {
         Application* app; // The application in which the state runs
@@ -28,7 +28,7 @@ namespace our
             this->app = app;
         }
 
-        // This should be called every frame to update all entities containing a FreeCameraControllerComponent 
+        // This should be called every frame to update all entities containing a FreeCameraControllerComponent
         void update(World* world, float deltaTime) {
             // First of all, we search for an entity containing both a CameraComponent and a FreeCameraControllerComponent
             // As soon as we find one, we break
@@ -70,7 +70,7 @@ namespace our
             if(rotation.x < -glm::half_pi<float>() * 0.99f) rotation.x = -glm::half_pi<float>() * 0.99f;
             if(rotation.x >  glm::half_pi<float>() * 0.99f) rotation.x  = glm::half_pi<float>() * 0.99f;
             // This is not necessary, but whenever the rotation goes outside the 0 to 2*PI range, we wrap it back inside.
-            // This could prevent floating point error if the player rotates in single direction for an extremely long time. 
+            // This could prevent floating point error if the player rotates in single direction for an extremely long time.
             rotation.y = glm::wrapAngle(rotation.y);
 
             // We update the camera fov based on the mouse wheel scrolling amount
@@ -82,7 +82,7 @@ namespace our
             glm::mat4 matrix = glm::eulerAngleY(entity->localTransform.rotation.y);
 
             glm::vec3 front = glm::vec3(matrix * glm::vec4(0, 0, -1, 0)),
-                      up = glm::vec3(matrix * glm::vec4(0, 1, 0, 0)), 
+                      up = glm::vec3(matrix * glm::vec4(0, 1, 0, 0)),
                       right = glm::vec3(matrix * glm::vec4(1, 0, 0, 0));
 
             glm::vec3 current_sensitivity = controller->positionSensitivity;
@@ -94,8 +94,8 @@ namespace our
             if(app->getKeyboard().isPressed(GLFW_KEY_W)) position += front * (deltaTime * current_sensitivity.z);
             if(app->getKeyboard().isPressed(GLFW_KEY_S)) position -= front * (deltaTime * current_sensitivity.z);
             // Q & E moves the player up and down
-            if(app->getKeyboard().isPressed(GLFW_KEY_Q)) position += up * (deltaTime * current_sensitivity.y);
-            if(app->getKeyboard().isPressed(GLFW_KEY_E)) position -= up * (deltaTime * current_sensitivity.y);
+            //if(app->getKeyboard().isPressed(GLFW_KEY_Q)) position += up * (deltaTime * current_sensitivity.y);
+            //if(app->getKeyboard().isPressed(GLFW_KEY_E)) position -= up * (deltaTime * current_sensitivity.y);
             // A & D moves the player left or right 
             if(app->getKeyboard().isPressed(GLFW_KEY_D)) position += right * (deltaTime * current_sensitivity.x);
             if(app->getKeyboard().isPressed(GLFW_KEY_A)) position -= right * (deltaTime * current_sensitivity.x);

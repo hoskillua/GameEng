@@ -39,7 +39,7 @@ set(COMMON_SOURCES
         source/common/asset-loader.cpp
         source/common/asset-loader.hpp
         source/common/deserialize-utils.hpp
-        
+
         source/common/shader/shader.hpp
         source/common/shader/shader.cpp
 
@@ -71,6 +71,8 @@ set(COMMON_SOURCES
 
         source/common/components/camera.hpp
         source/common/components/camera.cpp
+        source/common/components/player-controller.hpp
+        source/common/components/player-controller.cpp
         source/common/components/mesh-renderer.hpp
         source/common/components/mesh-renderer.cpp
         source/common/components/free-camera-controller.hpp
@@ -82,6 +84,7 @@ set(COMMON_SOURCES
         source/common/systems/forward-renderer.hpp
         source/common/systems/forward-renderer.cpp
         source/common/systems/free-camera-controller.hpp
+        source/common/systems/player-controller.hpp
         source/common/systems/movement.hpp
 )
 
