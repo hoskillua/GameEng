@@ -2,7 +2,7 @@
 
 #include "../ecs/component.hpp"
 
-#include <glm/glm.hpp> 
+#include <glm/glm.hpp>
 
 namespace our {
 
