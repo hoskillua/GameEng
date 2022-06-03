@@ -30,7 +30,8 @@
                 "grass": "assets/textures/grass_ground_d.jpg",
                 "wood": "assets/textures/wood.jpg",
                 "glass": "assets/textures/glass-panels.png",
-                "monkey": "assets/textures/monkey.png"
+                "monkey": "assets/textures/monkey.png",
+                "cannon": "assets/textures/Turret_Color.jpg"
             },
             "meshes":{
                 "cube": "assets/models/cube.obj",
@@ -39,7 +40,8 @@
                 "plane2": "assets/models/plane2.obj",
                 "sphere": "assets/models/sphere.obj",
                 "warhouse": "assets/models/55555.obj",
-                "truck": "assets/models/truck.obj"
+                "truck": "assets/models/truck.obj",
+                "cannon": "assets/models/cannon.obj"
             },
             "samplers":{
                 "default":{},
@@ -88,6 +90,21 @@
                     "tint": [1, 1, 1, 1],
                     "texture": "glass",
                     "sampler": "pixelated"
+                },
+                "cannon":{
+                    "type": "textured",
+                    "shader": "textured",
+                    "pipelineState": {
+                        "faceCulling":{
+                            "enabled": false
+                        },
+                        "depthTesting":{
+                            "enabled": true
+                        }
+                    },
+                    "tint": [1, 1, 1, 1],
+                    "texture": "cannon",
+                    "sampler": "default"
                 },
                 "grass":{
                     "type": "textured",
@@ -183,7 +200,7 @@
             {
                 "position": [0, 0, 0],
                 "rotation": [0, 0, 0],
-                "scale": [0.5, 0.5, 0.5],
+                "scale": [0.7, 0.7, 0.7],
                 "components": [
                     {
                         "type": "Player Controller",
@@ -258,7 +275,42 @@
                         "material": "glass"
                     }
                 ]
-            }/*,*/
+            },
+            {
+                "position": [-15, 0, -15],
+                "rotation": [0, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "cannon",
+                        "material": "cannon"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, 0],
+                        "angularVelocity": [0, 7, 0]
+                    }
+                ]
+            },
+            {
+                "position": [-15, 0, 55],
+                "rotation": [0, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "cannon",
+                        "material": "cannon"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, 0],
+                        "angularVelocity": [0, 7, 0]
+                    }
+                ]
+            }
+            /*,*/
             // {
             //     "position": [0, 10, 0],
             //     "rotation": [45, 45, 0],
