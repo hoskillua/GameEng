@@ -26,6 +26,11 @@
                 }
             },
             "textures":{
+                "albedo": "assets/textures/albedo.jpg",
+                "ambient": "assets/textures/ambient_occlusion.jpg",
+                "emissive": "assets/textures/emissive.jpg",
+                "roughness": "assets/textures/roughness.jpg",
+                "specular": "assets/textures/specular.jpg",
                 "moon": "assets/textures/moon.jpg",
                 "grass": "assets/textures/grass_ground_d.jpg",
                 "wood": "assets/textures/wood.jpg",
@@ -164,7 +169,7 @@
                     {
                         "type": "Movement",
                         "linearVelocity": [0, 0.1, 0],
-                        "angularVelocity": [0, 45, 0]
+                        "angularVelocity": [90, 45, 0]
                     }
                 ]
             },
@@ -252,7 +257,7 @@
                     },
                     {
                         "type": "Movement",
-                        "angularVelocity": [0, 90, 0]
+                        "angularVelocity": [45, 90, 20]
                     }
                 ]
             }
