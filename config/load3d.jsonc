@@ -142,7 +142,9 @@
                 "rotation": [-60,-30,0],
                 "components": [
                     {
-                        "type": "Camera"
+                        "type": "Camera",
+                        "cameraType": "orthographic",
+                        "orthoHeight": 40
                     },
                     {
                         "type": "Free Camera Controller"
@@ -185,8 +187,10 @@
                 "components": [
                     {
                         "type": "Player Controller",
-                        "VerticalSpeed": 5,
-                        "VerticalAcceleration": 5
+                        "VerticalSpeed": 16,
+                        "VerticalAcceleration": 20,
+                        "AngularAcceleration": 0.5,
+                        "AngularSpeed": 0.1
                     },
                     {
                         "type": "Mesh Renderer",

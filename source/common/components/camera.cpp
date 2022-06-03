@@ -62,10 +62,12 @@ namespace our {
               );
         } else {
             return glm::ortho(
-                -orthoHeight / 2 * aspectRatio, // left
-                orthoHeight / 2 * aspectRatio, // right
-                -orthoHeight / 2, // bottom
-                orthoHeight / 2 // top
+                -orthoHeight * aspectRatio, // left
+                orthoHeight * aspectRatio, // right
+                -orthoHeight, // bottom
+                orthoHeight, // top
+                near, // near plane
+                far // far plane
                 );
         }
     }

@@ -9,5 +9,7 @@ namespace our {
         if(!data.is_object()) return;
         VspeedMax = data.value("VerticalSpeed", VspeedMax);
         VAccel = data.value("VerticalAcceleration", VAccel);
+        AspeedMax = data.value("AngularSpeed", AspeedMax);
+        AAccel = data.value("AngularAcceleration", AAccel);
     }
 }

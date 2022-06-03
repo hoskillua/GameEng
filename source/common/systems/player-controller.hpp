@@ -58,7 +58,7 @@ namespace our
 
             // We get a reference to the entity's position and rotation
             glm::vec3 &position = entity->localTransform.position;
-            // glm::vec3& rotation = entity->localTransform.rotation;
+            glm::vec3 &rotation = entity->localTransform.rotation;
 
             // If the left mouse button is pressed, we get the change in the mouse location
             // and use it to update the camera rotation
@@ -85,31 +85,54 @@ namespace our
             //  If the LEFT SHIFT key is pressed, we multiply the position sensitivity by the speed up factor
             // if(app->getKeyboard().isPressed(GLFW_KEY_LEFT_SHIFT)) current_sensitivity *= controller->speedupFactor;
 
-            // We change the camera position based on the keys WASD/QE
-            // S & W moves the player back and forth
+            if (app->getKeyboard().isPressed(GLFW_KEY_LEFT))
+            {
+                controller->Aspeed = std::min(controller->Aspeed + controller->AAccel * deltaTime, controller->AspeedMax);
+            }
+            else if (app->getKeyboard().isPressed(GLFW_KEY_RIGHT))
+            {
+                controller->Aspeed = std::max(controller->Aspeed - controller->AAccel * deltaTime, -controller->AspeedMax);
+            }
+            else if (controller->Aspeed > 0.01f)
+            {
+                controller->Aspeed = std::max(controller->Aspeed - controller->AAccel * deltaTime, 0.0f);
+            }
+            else if (controller->Aspeed < -0.01f)
+            {
+                controller->Aspeed = std::min(controller->Aspeed + controller->AAccel * deltaTime, 0.0f);
+            }
+            else
+            {
+                controller->Aspeed = 0.0f;
+            }
+
             if (app->getKeyboard().isPressed(GLFW_KEY_UP))
             {
                 controller->Vspeed = std::min(controller->Vspeed + controller->VAccel * deltaTime, controller->VspeedMax);
-                position.z += controller->Vspeed * deltaTime;
-                std::cout << controller->Vspeed << "\n";
+                rotation.y += controller->Vspeed * controller->Aspeed * deltaTime;
+                position.z += controller->Vspeed * deltaTime * cos(rotation.y);
+                position.x += controller->Vspeed * deltaTime * sin(rotation.y);
             }
             else if (app->getKeyboard().isPressed(GLFW_KEY_DOWN))
             {
                 controller->Vspeed = std::max(controller->Vspeed - controller->VAccel * deltaTime, -controller->VspeedMax);
-                position.z += controller->Vspeed * deltaTime;
-                std::cout << controller->Vspeed << "\n";
+                rotation.y += controller->Vspeed * controller->Aspeed * deltaTime;
+                position.z += controller->Vspeed * deltaTime * cos(rotation.y);
+                position.x += controller->Vspeed * deltaTime * sin(rotation.y);
             }
             else if (controller->Vspeed > 0.01f)
             {
                 controller->Vspeed = std::max(controller->Vspeed - controller->VAccel * deltaTime, 0.0f);
-                position.z += controller->Vspeed * deltaTime;
-                std::cout << controller->Vspeed << "\n";
+                rotation.y += controller->Vspeed * controller->Aspeed * deltaTime;
+                position.z += controller->Vspeed * deltaTime * cos(rotation.y);
+                position.x += controller->Vspeed * deltaTime * sin(rotation.y);
             }
-            else if (controller->Vspeed < 0.01f)
+            else if (controller->Vspeed < -0.01f)
             {
                 controller->Vspeed = std::min(controller->Vspeed + controller->VAccel * deltaTime, 0.0f);
-                position.z += controller->Vspeed * deltaTime;
-                std::cout << controller->Vspeed << "\n";
+                rotation.y += controller->Vspeed * controller->Aspeed * deltaTime;
+                position.z += controller->Vspeed * deltaTime * cos(rotation.y);
+                position.x += controller->Vspeed * deltaTime * sin(rotation.y);
             }
             else
             {
