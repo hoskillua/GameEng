@@ -1,6 +1,7 @@
 #include "forward-renderer.hpp"
 #include "../mesh/mesh-utils.hpp"
 #include "../texture/texture-utils.hpp"
+
 namespace our {
 
     void ForwardRenderer::initialize(glm::ivec2 windowSize, const nlohmann::json& config){
@@ -204,18 +205,6 @@ namespace our {
             //Set the uniform transform
             opaqueCommands[i].material->shader->set("transform", VP * opaqueCommands[i].localToWorld);
 
-            //Set the uniform VP (useful to get the normal with lighning)
-            opaqueCommands[i].material->shader->set("VP", VP);
-
-            //Set the uniform M (useful to get the normal with lighning)
-            opaqueCommands[i].material->shader->set("M", opaqueCommands[i].localToWorld);
-
-            //Set the uniform M_Inverse (useful to get the normal with lighning)
-            opaqueCommands[i].material->shader->set("M_IT", glm::inverse( opaqueCommands[i].localToWorld));
-
-            //Set the uniform is_opaque (useful to get the normal with lighning)
-            opaqueCommands[i].material->shader->set("is_opaque", true);
-
             //Draw Mesh
             opaqueCommands[i].mesh->draw();
         }
@@ -256,9 +245,6 @@ namespace our {
 
             //Set the uniform transform
             transparentCommands[i].material->shader->set("transform", VP * transparentCommands[i].localToWorld);
-
-            //Set the uniform transform
-            transparentCommands[i].material->shader->set("is_opaque", false);
 
             //Draw Mesh
             transparentCommands[i].mesh->draw();
