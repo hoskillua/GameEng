@@ -20,8 +20,8 @@ namespace our
     class PlayerControllerSystem
     {
         Application *app; // The application in which the state runs
-
     public:
+        
         // When a state enters, it should call this function and give it the pointer to the application
 
         void enter(Application *app)
@@ -147,7 +147,7 @@ namespace our
                 if (entity != controller->getOwner() && entity->name != "ground")
                 {
                     glm::vec3 entityPos = entity->localTransform.position;
-                    if (glm::distance(entityPos, position) < controller->radius)
+                    if(glm::distance(entityPos, position) < controller->getOwner()->radius + entity->radius)
                     {
                         position = positionPrev;
                         rotation = rotationPrev;

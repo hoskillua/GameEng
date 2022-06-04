@@ -2,6 +2,7 @@
 
 #include "../ecs/world.hpp"
 #include "../components/player-controller.hpp"
+#include "../components/barracks-controller.hpp"
 
 #include "../application.hpp"
 
@@ -13,7 +14,7 @@
 #include <glm/trigonometric.hpp>
 #include <glm/gtx/fast_trigonometry.hpp>
 
-
+#include<iostream>
 
 
 
@@ -43,29 +44,90 @@ namespace our
         // This should be called every frame to update all entities containing a FreeCameraControllerComponent
         void update(World *world, float deltaTime)
         {
-            // First of all, we search for an entity containing both a CameraComponent and a FreeCameraControllerComponent
-            // As soon as we find one, we break
-
-            /*
             
-            if(player collided with barracks && !is_money_taken)
-            {
-                player_money+=money;
-                is_money_taken = true;
 
-                chnage_color_barracks(red);
+            BarracksControllerComponent *controller = nullptr;
+            for (auto entity : world->getEntities())
+            {
+                controller = entity->getComponent<BarracksControllerComponent>();
+                if (controller)
+                    break;
+            }
+            // If there is no entity with both a CameraComponent and a FreeCameraControllerComponent, we can do nothing so we return
+            if (!(controller))
+                return;
+            // Get the entity that we found via getOwner of camera (we could use controller->getOwner())
+            Entity *entity = controller->getOwner();
+            glm::vec3 &position = entity->localTransform.position;
+
+
+            Entity *player_entity =getPlayerEntity(world);
+            
+            glm::vec3 playerPos = player_entity->localTransform.position;
+
+
+            if(glm::distance(playerPos, position) < controller->radius  &&  !is_money_taken)
+            {
+
+                is_money_taken = true;
+                //done: add money to player
+                player_entity->getComponent<PlayerControllerComponent>()->money+=money;
+                std::cout << "player money=" << player_entity->getComponent<PlayerControllerComponent>()->money<<std::endl;
+                //player_entity->getComponent<PlayerControllerComponent>()->money += money;
+                std::cout<<"You have taken "<<money<<"$"<<std::endl;
+                //todo, change color of baracks to red
+
+            }
+        
+
+            //todo 
+            /*
+            if(60 sec){
+                is_money_taken = false;
+                money = rand() % 100;
+                change_color_to_normal();
             }
             */
+
+        
+
+            
             
             
         }
+
+        // bool is_collided_with_player(BarracksControllerComponent *controller)
+        // {
+        //     Entity *player_entity =getPlayerEntity();
+        //     glm::vec3 entityPos = player_entity->localTransform.position;
+        //     if(glm::distance(entityPos, position) < controller->radius)
+        //     {
+        //         return true;
+        //     }
+        //     return false;
+        // }
+    
+        Entity* getPlayerEntity(World* world)
+        {
+
+            for (auto entity : world->getEntities())
+            {   
+                if(entity->name == "player")
+                {
+                    return entity;
+                }
+            }
+            return nullptr;
+        }
+        
+
     
     
+        void exit()
+        {
+        }
     
-    
-    
-    
-    }
+    };
 
 
 
@@ -73,7 +135,7 @@ namespace our
 
 
 
-}
+};
 
 
 

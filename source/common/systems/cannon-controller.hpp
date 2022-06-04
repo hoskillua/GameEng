@@ -58,7 +58,7 @@ namespace our
                     glm::vec3 &playerPosition = player->localTransform.position;
                     // Calculate the distance between the player and the cannon
                     float distance = glm::distance(playerPosition, position);
-                    std::cout << "Distance: " << distance << std::endl;
+                    //std::cout << "Distance: " << distance << std::endl;
                     // If the distance is greater than the cannon's range, we can't shoot
                     if (distance < controller->range)
                     {

@@ -23,6 +23,10 @@
                 "textured":{
                     "vs":"assets/shaders/textured.vert",
                     "fs":"assets/shaders/textured.frag"
+                },
+                "lit":{
+                    "vs":"assets/shaders/lit.vert",
+                    "fs":"assets/shaders/lit.frag"
                 }
             },
             "textures":{
@@ -234,7 +238,9 @@
             {
                 "position": [0, 0, 0],
                 "rotation": [0, 0, 0],
-                "scale": [1.2, 0.7, 0.7],
+                "scale": [1.5, 0.7, 0.7],
+                "radius": 8,
+                "name":"player",
                 "components": [
                     {
                         "type": "Player Controller",
@@ -316,6 +322,7 @@
                 "position": [-25, 0, -15],
                 "rotation": [0, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
+                "radius": 6,
                 "components": [
                     {
                         "type": "CannonMovement",
@@ -326,12 +333,28 @@
                         "type": "Mesh Renderer",
                         "mesh": "cannon",
                         "material": "cannon"
-                    }/*,*/
-                    // {
-                    //     "type": "Movement",
-                    //     "linearVelocity": [0, 0, 0],
-                    //     "angularVelocity": [0, 20, 0]
-                    // }
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, 0],
+                        "angularVelocity": [0, 20, 0]
+                    }
+                ]
+            },
+            {
+                "position": [20,0, 50],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "cannon"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
                 ]
             },
             // {
@@ -350,6 +373,7 @@
                 "position": [-15, 0, 55],
                 "rotation": [0, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
+                "radius": 6,
                 "components": [
                     {
                         "type": "CannonMovement",
@@ -368,6 +392,7 @@
                 "position": [55, 0, 55],
                 "rotation": [0, 0, 0],
                 "scale": [0.1, 0.1, 0.1],
+                "radius": 12,
                 "components": [
                 
                     {

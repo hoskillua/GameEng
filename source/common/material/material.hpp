@@ -5,6 +5,8 @@
 #include "../texture/sampler.hpp"
 #include "../shader/shader.hpp"
 
+#include <string.h>
+
 #include <glm/vec4.hpp>
 #include <json/json.hpp>
 
@@ -26,6 +28,9 @@ namespace our {
         virtual void setup() const;
         // This function read a material from a json object
         virtual void deserialize(const nlohmann::json& data);
+
+        // This function returns the type of the material (tinted, textured, lit)
+        virtual std::string material_type();
     };
 
     // This material adds a uniform for a tint (a color that will be sent to the shader)
@@ -36,6 +41,7 @@ namespace our {
 
         void setup() const override;
         void deserialize(const nlohmann::json& data) override;
+        std::string material_type();
     };
 
     // This material adds two uniforms (besides the tint from Tinted Material)
@@ -51,7 +57,31 @@ namespace our {
 
         void setup() const override;
         void deserialize(const nlohmann::json& data) override;
+        std::string material_type();
+
     };
+
+
+    // This material adds 4 uniforms (besides the tint from Tinted Material)
+    // The uniforms are:
+    // - "tex" which is a Sampler2D. "texture" and "sampler" will be bound to it.
+    // - "alphaThreshold" which defined the alpha limit below which the pixel should be discarded
+    // An example where this material can be used is when the object has a texture
+    class LitMaterial : public TexturedMaterial {
+    public:
+        Texture2D* diffusion;
+        Texture2D* specular;
+        Texture2D* ambient_occlusion;
+        Texture2D* roughness;
+        Texture2D* emissive;
+
+
+
+        void setup() const override;
+        void deserialize(const nlohmann::json& data) override;
+        std::string material_type();
+    };
+
 
     // This function returns a new material instance based on the given type
     inline Material* createMaterialFromType(const std::string& type){
@@ -59,6 +89,8 @@ namespace our {
             return new TintedMaterial();
         } else if(type == "textured"){
             return new TexturedMaterial();
+        } else if(type == "lit"){
+            return new LitMaterial();
         } else {
             return new Material();
         }
