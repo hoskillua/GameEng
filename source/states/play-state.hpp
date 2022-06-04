@@ -108,7 +108,16 @@ class Playstate : public our::State
         ImGui::SetWindowPos(ImVec2(950,10));
         // change window size
         ImGui::SetWindowSize(ImVec2(300,50));
+        // colored progressbar
         ImGui::ProgressBar(player->health);
+        ImGui::End();
+        ImGui::Begin("money",0,ImGuiWindowFlags_NoDecoration|ImGuiWindowFlags_NoMove);
+        // change window position
+        ImGui::SetWindowPos(ImVec2(950,50));
+        // change window size
+        ImGui::SetWindowSize(ImVec2(300,20));
+        // add styled text to the window
+        ImGui::TextColored(ImVec4(1.0f, 1.0f, 0.0f, 1.0f), "Money: %d", player->money);
         ImGui::End();
     }
 };

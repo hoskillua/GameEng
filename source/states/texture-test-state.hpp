@@ -37,7 +37,7 @@ class TextureTestState: public our::State {
         mesh = new our::Mesh(vertices, elements);
         
         // Then we create a texture and load an image into it
-        texture = our::texture_utils::loadImage(config.value("texture", ""));
+        texture = our::texture_utils::loadImage(config.value("texture", "assets/textures/gameover.jpg"));
     }
 
     void onDraw(double deltaTime) override {
