@@ -20,8 +20,8 @@ namespace our
     class PlayerControllerSystem
     {
         Application *app; // The application in which the state runs
-
     public:
+        
         // When a state enters, it should call this function and give it the pointer to the application
         void enter(Application *app)
         {
