@@ -32,38 +32,43 @@ namespace our
             PlayerControllerComponent *playercomponent = nullptr;
             for (auto entity : world->getEntities())
             {
-                if (!controller)
-                    controller = entity->getComponent<CannonControllerComponent>();
-                if (!playercomponent)
-                    playercomponent = entity->getComponent<PlayerControllerComponent>();
-                if (controller && playercomponent)
+                playercomponent = entity->getComponent<PlayerControllerComponent>();
+                if (playercomponent)
+                {
                     break;
+                }
             }
             // If there is no entity with both a CameraComponent and a FreeCameraControllerComponent, we can do nothing so we return
-            if (!(controller && playercomponent))
-            {
-                std::cout << "No CannonControllerComponent found" << std::endl;
-                return;
 
-            } // Get the entity that we found via getOwner of cannon (we could use controller->getOwner())
-            Entity *entity = controller->getOwner();
+            if (!playercomponent)
+                return;
             Entity *player = playercomponent->getOwner();
-            // We get a reference to the entity's position and rotation
-            entity->localTransform.rotation.y += deltaTime * controller->angularVelocity.y;
-            glm::vec3 &position = entity->localTransform.position;
-            glm::vec3 &rotation = entity->localTransform.rotation;
-            glm::vec3 &playerPosition = player->localTransform.position;
-            glm::vec3 &playerRotation = player->localTransform.rotation;
-            // Calculate the distance between the player and the cannon
-            float distance = glm::distance(playerPosition, position);
-            std::cout << "Distance: " << distance << std::endl;
-            // If the distance is greater than the cannon's range, we can't shoot
-            if (distance < controller->range)
+            for (auto entity : world->getEntities())
             {
-                // get direction to player
-                glm::vec3 direction = glm::normalize(playerPosition - position);
-                // rotate y to direction
-                rotation.y = glm::atan(direction.x, direction.z) + glm::pi<float>() / 2.0f;
+                controller = entity->getComponent<CannonControllerComponent>();
+                if (controller)
+                {
+                    Entity *entity = controller->getOwner();
+                    // We get a reference to the entity's position and rotation
+                    entity->localTransform.rotation.y += deltaTime * controller->angularVelocity.y;
+                    if (entity->localTransform.rotation.y > glm::pi<float>() * 2.0f)
+                        entity->localTransform.rotation.y -= glm::pi<float>() * 2.0f;
+                    glm::vec3 &position = entity->localTransform.position;
+                    glm::vec3 &rotation = entity->localTransform.rotation;
+                    glm::vec3 &playerPosition = player->localTransform.position;
+                    // Calculate the distance between the player and the cannon
+                    float distance = glm::distance(playerPosition, position);
+                    std::cout << "Distance: " << distance << std::endl;
+                    // If the distance is greater than the cannon's range, we can't shoot
+                    if (distance < controller->range)
+                    {
+                        // get direction to player
+                        glm::vec3 direction = glm::normalize(playerPosition - position);
+                        // rotate y to direction
+                        rotation.y = (rotation.y * 11 + glm::atan(direction.x, direction.z) + glm::pi<float>() / 2.0f) / 12;
+                    }
+                }
+                // Get the entity that we found via getOwner of cannon (we could use controller->getOwner())
             }
         }
         // When the state exits, it should call this function to ensure the mouse is unlocked
@@ -71,5 +76,4 @@ namespace our
         {
         }
     };
-
 }
