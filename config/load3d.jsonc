@@ -23,6 +23,10 @@
                 "textured":{
                     "vs":"assets/shaders/textured.vert",
                     "fs":"assets/shaders/textured.frag"
+                },
+                "lit":{
+                    "vs":"assets/shaders/lit.vert",
+                    "fs":"assets/shaders/lit.frag"
                 }
             },
             "textures":{

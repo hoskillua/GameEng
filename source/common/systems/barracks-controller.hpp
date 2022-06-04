@@ -70,7 +70,9 @@ namespace our
             {
 
                 is_money_taken = true;
-                //todo: add money to player
+                //done: add money to player
+                player_entity->getComponent<PlayerControllerComponent>()->money+=money;
+                std::cout << "player money=" << player_entity->getComponent<PlayerControllerComponent>()->money<<std::endl;
                 //player_entity->getComponent<PlayerControllerComponent>()->money += money;
                 std::cout<<"You have taken "<<money<<"$"<<std::endl;
                 //todo, change color of baracks to red
