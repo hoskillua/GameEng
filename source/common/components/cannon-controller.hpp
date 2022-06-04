@@ -12,7 +12,7 @@ namespace our
     public:
         glm::vec3 angularVelocity = {0, 0, 0}; // Each frame, the entity should rotate as follows: rotation += angularVelocity * deltaTime
         float range = 50.0f; // The range of the cannon
-        float damage = 10.0f; // The damage of the cannon
+        float damage = 0.05f; // The damage of the cannon
         float fireRate = 1.0f; // The fire rate of the cannon
         float reloadTime = 0.0f; // The reload time of the cannon
 

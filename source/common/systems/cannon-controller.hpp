@@ -63,6 +63,7 @@ namespace our
                     if (distance < controller->range)
                     {
                         // get direction to player
+                        playercomponent->health -= controller->damage;
                         glm::vec3 direction = glm::normalize(playerPosition - position);
                         // rotate y to direction
                         rotation.y = (rotation.y * 11 + glm::atan(direction.x, direction.z) + glm::pi<float>() / 2.0f) / 12;

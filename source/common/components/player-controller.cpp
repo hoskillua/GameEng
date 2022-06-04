@@ -12,5 +12,6 @@ namespace our {
         AspeedMax = data.value("AngularSpeed", AspeedMax);
         AAccel = data.value("AngularAcceleration", AAccel);
         radius = data.value("radius", radius);
+        health = data.value("health", health);
     }
 }

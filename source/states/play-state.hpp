@@ -74,22 +74,31 @@ class Playstate : public our::State
 
     void onImmediateGui() override
     {
-        our::CameraComponent *camera;
-        our::FreeCameraControllerComponent *controller;
+        our::CameraComponent *camera = nullptr;
+        our::FreeCameraControllerComponent *controller = nullptr;
+        our::PlayerControllerComponent *player = nullptr;
         // We use ImGui to draw some debug information
         ImGui::Begin("Debug");
         for (auto entity : world.getEntities())
         {
-            camera = entity->getComponent<our::CameraComponent>();
-            controller = entity->getComponent<our::FreeCameraControllerComponent>();
-            if (camera && controller)
+            if (!camera)
+                camera = entity->getComponent<our::CameraComponent>();
+            if (!controller)
+                controller = entity->getComponent<our::FreeCameraControllerComponent>();
+            if (!player)
+                player = entity->getComponent<our::PlayerControllerComponent>();
+            if (camera && controller && player)
                 break;
         }
+        if(!camera || !controller || !player)
+            return;
 
         ImGui::DragFloat3("Camera position", &camera->getOwner()->localTransform.position.x);
         ImGui::DragFloat3("Camera speed", &controller->positionSensitivity.x);
-        ImGui::DragFloat("Camera speedup faactor", &controller->speedupFactor);
-
+        ImGui::DragFloat("Camera speedup factor", &controller->speedupFactor);
+        ImGui::End();
+        ImGui::Begin("health",0,ImGuiWindowFlags_NoDecoration|ImGuiWindowFlags_NoBackground|ImGuiWindowFlags_NoMove);
+        ImGui::ProgressBar(player->health);
         ImGui::End();
     }
 };
