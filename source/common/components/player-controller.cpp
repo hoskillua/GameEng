@@ -11,5 +11,6 @@ namespace our {
         VAccel = data.value("VerticalAcceleration", VAccel);
         AspeedMax = data.value("AngularSpeed", AspeedMax);
         AAccel = data.value("AngularAcceleration", AAccel);
+        radius = data.value("radius", radius);
     }
 }

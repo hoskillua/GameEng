@@ -59,6 +59,10 @@ namespace our
             // We get a reference to the entity's position and rotation
             glm::vec3 &position = entity->localTransform.position;
             glm::vec3 &rotation = entity->localTransform.rotation;
+            glm::vec3 positionPrev = position;
+            glm::vec3 rotationPrev = rotation;
+
+
 
             // If the left mouse button is pressed, we get the change in the mouse location
             // and use it to update the camera rotation
@@ -138,6 +142,20 @@ namespace our
             {
                 controller->Vspeed = 0.0f;
             }
+            for (auto entity : world->getEntities())
+            {
+                if(entity != controller->getOwner() && entity->name != "ground")
+                {
+                    glm::vec3 entityPos = entity->localTransform.position;
+                    if(glm::distance(entityPos, position) < controller->radius)
+                    {
+                        position = positionPrev;
+                        rotation = rotationPrev;
+                        break;
+                    }
+                }
+            }
+
             // A & D moves the player left or right
             // if(app->getKeyboard().isPressed(GLFW_KEY_LEFT)) position += right * (deltaTime * current_sensitivity.x);
             // if(app->getKeyboard().isPressed(GLFW_KEY_RIGHT)) position -= right * (deltaTime * current_sensitivity.x);
