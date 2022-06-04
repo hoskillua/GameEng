@@ -73,6 +73,8 @@ set(COMMON_SOURCES
         source/common/components/camera.cpp
         source/common/components/player-controller.hpp
         source/common/components/player-controller.cpp
+        source/common/components/cannon-controller.hpp
+        source/common/components/cannon-controller.cpp
         source/common/components/mesh-renderer.hpp
         source/common/components/mesh-renderer.cpp
         source/common/components/free-camera-controller.hpp
@@ -88,6 +90,7 @@ set(COMMON_SOURCES
         source/common/systems/free-camera-controller.hpp
         source/common/systems/player-controller.hpp
         source/common/systems/barracks-controller.hpp
+        source/common/systems/cannon-controller.hpp
         source/common/systems/movement.hpp
 )
 

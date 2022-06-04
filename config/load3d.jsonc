@@ -42,7 +42,7 @@
                 "sphere": "assets/models/sphere.obj",
                 "warhouse": "assets/models/55555.obj",
                 "truck": "assets/models/truck.obj",
-                "cannon": "assets/models/cannon.obj",
+                "cannon": "assets/models/cannon2.obj",
                 "barracks": "assets/models/barracks.obj"
             },
             "samplers":{
@@ -218,8 +218,7 @@
             {
                 "position": [0, 0, 0],
                 "rotation": [0, 0, 0],
-                "scale": [1, 0.7, 0.7],
-                "name" : "player",
+                "scale": [1.2, 0.7, 0.7],
                 "components": [
                     {
                         "type": "Player Controller",
@@ -302,6 +301,11 @@
                 "scale": [0.05, 0.05, 0.05],
                 "components": [
                     {
+                        "type": "CannonMovement",
+                        "angularVelocity": [0, 20, 0],
+                        "range": 35.0
+                    },
+                    {
                         "type": "Mesh Renderer",
                         "mesh": "cannon",
                         "material": "cannon"
@@ -328,20 +332,33 @@
                     }
                 ]
             },
+            // {
+            //     "position": [10,0, 10],
+            //     "rotation": [0, 0  , 90],
+            //     "scale": [0.05, 0.05, 0.05],
+            //     "components": [
+            //         {
+            //             "type": "Mesh Renderer",
+            //             "mesh": "barracks" ,
+            //             "material": "cannon"
+            //         }
+            //     ]
+            // },
             {
                 "position": [-15, 0, 55],
                 "rotation": [0, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
                 "components": [
                     {
+                        "type": "CannonMovement",
+                        "angularVelocity": [0, 20, 0],
+                        "range": 35.0
+                    },
+
+                    {
                         "type": "Mesh Renderer",
                         "mesh": "cannon",
                         "material": "cannon"
-                    },
-                    {
-                        "type": "Movement",
-                        "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 20, 0]
                     }
                 ]
             }
