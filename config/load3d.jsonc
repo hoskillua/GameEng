@@ -339,8 +339,38 @@
                 ]
             },
             {
-                "position": [20,0, 50],
-                "rotation": [0, 0  , 90],
+                "position": [50,0, 50],
+                "rotation": [-90, 0  , 0],
+                "scale": [0.05, 0.05, 0.05],
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "cannon"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [90,0, 50],
+                "rotation": [-90, 0  , 0],
+                "scale": [0.05, 0.05, 0.05],
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "cannon"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [10,0, 90],
+                "rotation": [-90, 0  , 0],
                 "scale": [0.05, 0.05, 0.05],
                 "components": [
                     {
