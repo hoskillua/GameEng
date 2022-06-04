@@ -2,6 +2,8 @@
 
 #include "../ecs/world.hpp"
 #include "../components/camera.hpp"
+#include "../components/light.hpp"
+
 #include "../components/mesh-renderer.hpp"
 #include "../asset-loader.hpp"
 

@@ -125,11 +125,23 @@ namespace our {
     void ForwardRenderer::render(World* world){
         // First of all, we search for a camera and for all the mesh renderers
         CameraComponent* camera = nullptr;
+
+        // Define a vector for all light components
+        std::vector<LightComponent*> lights;
+
         opaqueCommands.clear();
         transparentCommands.clear();
         for(auto entity : world->getEntities()){
             // If we hadn't found a camera yet, we look for a camera in this entity
             if(!camera) camera = entity->getComponent<CameraComponent>();
+            
+            // If this entity has light component
+            if(auto lighter = entity->getComponent<LightComponent>(); lighter)
+            {
+                    lights.push_back(lighter);
+            }
+            
+            
             // If this entity has a mesh renderer component
             if(auto meshRenderer = entity->getComponent<MeshRendererComponent>(); meshRenderer){
                 // We construct a command from it
@@ -197,13 +209,54 @@ namespace our {
         
         //DONE: (Req 8) Draw all the opaque commands
         // Don't forget to set the "transform" uniform to be equal the model-view-projection matrix for each render command
-         for (int i = 0; i < opaqueCommands.size(); i++)
+        for (int i = 0; i < opaqueCommands.size(); i++)
         {
             //setup the material of the command
             opaqueCommands[i].material->setup();
 
             //Set the uniform transform
             opaqueCommands[i].material->shader->set("transform", VP * opaqueCommands[i].localToWorld);
+
+
+            //Set the uniform VP (useful to get the normal with lighning)
+            opaqueCommands[i].material->shader->set("VP", VP);
+
+            //Set the uniform M (useful to get the normal with lighning)
+            opaqueCommands[i].material->shader->set("M", opaqueCommands[i].localToWorld);
+
+            //Set the uniform M_Inverse (useful to get the normal with lighning)
+            opaqueCommands[i].material->shader->set("M_IT", glm::transpose( glm::inverse( opaqueCommands[i].localToWorld)));
+
+            //Set the uniform is_opaque (useful to get the normal with lighning)
+            opaqueCommands[i].material->shader->set("is_opaque", true);
+
+            opaqueCommands[i].material->shader->set("eye",cameraForward );
+
+            if (opaqueCommands[i].material->material_type() == "lit")
+            {
+            
+                //if it is lit material, send data of the light component
+                opaqueCommands[i].material->shader->set("light_count" , 1);
+
+                //Add all lights 
+                for (int j = 0; j < lights.size(); j++)
+                {
+                            
+                    opaqueCommands[i].material->shader->set("lights[0].type" , lights[0]->type);
+                    opaqueCommands[i].material->shader->set("lights[0].position" ,  lights[0]->getOwner()->localTransform.position );
+                    opaqueCommands[i].material->shader->set("lights[0].direction" , glm::vec3(0, 1, 0));
+                    opaqueCommands[i].material->shader->set("lights[0].diffuse" , lights[0]->diffuse);
+                    opaqueCommands[i].material->shader->set("lights[0].specular" , lights[0]->specular);
+                    opaqueCommands[i].material->shader->set("lights[0].attenuation" , lights[0]->attenuation);
+                    opaqueCommands[i].material->shader->set("lights[0].cone_angles" , glm::vec2(glm::radians(10.0f), glm::radians(11.0f)));
+
+                    opaqueCommands[i].material->shader->set("sky.top" , glm::vec3(0.3,0.6,1.0));
+                    opaqueCommands[i].material->shader->set("sky.middle" , glm::vec3(0.3,0.3,0.3));
+                    opaqueCommands[i].material->shader->set("sky.bottom" , glm::vec3(0.1,0.1,0));
+                }                
+                    
+            }
+
 
             //Draw Mesh
             opaqueCommands[i].mesh->draw();
