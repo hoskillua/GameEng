@@ -41,7 +41,7 @@
                 "sphere": "assets/models/sphere.obj",
                 "warhouse": "assets/models/55555.obj",
                 "truck": "assets/models/truck.obj",
-                "cannon": "assets/models/cannon.obj"
+                "cannon": "assets/models/cannon2.obj"
             },
             "samplers":{
                 "default":{},
@@ -189,6 +189,7 @@
                 "position": [0, -1, 0],
                 "rotation": [-90, 0, 0],
                 "scale": [1000, 1000, 1],
+                "name": "ground",
                 "components": [
                     {
                         "type": "Mesh Renderer",
@@ -200,14 +201,15 @@
             {
                 "position": [0, 0, 0],
                 "rotation": [0, 0, 0],
-                "scale": [0.7, 0.7, 0.7],
+                "scale": [1, 0.7, 0.7],
                 "components": [
                     {
                         "type": "Player Controller",
                         "VerticalSpeed": 16,
                         "VerticalAcceleration": 20,
                         "AngularAcceleration": 0.5,
-                        "AngularSpeed": 0.1
+                        "AngularSpeed": 0.1,
+                        "radius": 12
                     },
                     {
                         "type": "Mesh Renderer",
@@ -216,68 +218,68 @@
                     }
                 ]
             },
+            // {
+            //     "position": [0, 1, 2],
+            //     "rotation": [0, 0, 0],
+            //     "scale": [2, 2, 2],
+            //     "components": [
+            //         {
+            //             "type": "Mesh Renderer",
+            //             "mesh": "plane",
+            //             "material": "glass"
+            //         }
+            //     ]
+            // },
+            // {
+            //     "position": [0, 1, -2],
+            //     "rotation": [0, 0, 0],
+            //     "scale": [2, 2, 2],
+            //     "components": [
+            //         {
+            //             "type": "Mesh Renderer",
+            //             "mesh": "plane",
+            //             "material": "glass"
+            //         }
+            //     ]
+            // },
+            // {
+            //     "position": [2, 1, 0],
+            //     "rotation": [0, 90, 0],
+            //     "scale": [2, 2, 2],
+            //     "components": [
+            //         {
+            //             "type": "Mesh Renderer",
+            //             "mesh": "plane",
+            //             "material": "glass"
+            //         }
+            //     ]
+            // },
+            // {
+            //     "position": [-2, 1, 0],
+            //     "rotation": [0, 90, 0],
+            //     "scale": [2, 2, 2],
+            //     "components": [
+            //         {
+            //             "type": "Mesh Renderer",
+            //             "mesh": "plane",
+            //             "material": "glass"
+            //         }
+            //     ]
+            // },
+            // {
+            //     "position": [0, 3, 0],
+            //     "rotation": [90, 0, 0],
+            //     "scale": [2, 2, 2],
+            //     "components": [
+            //         {
+            //             "type": "Mesh Renderer",
+            //             "mesh": "plane",
+            //             "material": "glass"
+            //         }
+            //     ]
+            // },
             {
-                "position": [0, 1, 2],
-                "rotation": [0, 0, 0],
-                "scale": [2, 2, 2],
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "plane",
-                        "material": "glass"
-                    }
-                ]
-            },
-            {
-                "position": [0, 1, -2],
-                "rotation": [0, 0, 0],
-                "scale": [2, 2, 2],
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "plane",
-                        "material": "glass"
-                    }
-                ]
-            },
-            {
-                "position": [2, 1, 0],
-                "rotation": [0, 90, 0],
-                "scale": [2, 2, 2],
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "plane",
-                        "material": "glass"
-                    }
-                ]
-            },
-            {
-                "position": [-2, 1, 0],
-                "rotation": [0, 90, 0],
-                "scale": [2, 2, 2],
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "plane",
-                        "material": "glass"
-                    }
-                ]
-            },
-            {
-                "position": [0, 3, 0],
-                "rotation": [90, 0, 0],
-                "scale": [2, 2, 2],
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "plane",
-                        "material": "glass"
-                    }
-                ]
-            },
-            {
-                "position": [-15, 0, -15],
+                "position": [-25, 0, -15],
                 "rotation": [0, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
                 "components": [
@@ -289,7 +291,7 @@
                     {
                         "type": "Movement",
                         "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 7, 0]
+                        "angularVelocity": [0, 20, 0]
                     }
                 ]
             },
@@ -306,7 +308,7 @@
                     {
                         "type": "Movement",
                         "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 7, 0]
+                        "angularVelocity": [0, 20, 0]
                     }
                 ]
             }
