@@ -250,8 +250,8 @@ namespace our {
                     opaqueCommands[i].material->shader->set("lights[0].attenuation" , lights[0]->attenuation);
                     opaqueCommands[i].material->shader->set("lights[0].cone_angles" , glm::vec2(glm::radians(10.0f), glm::radians(11.0f)));
 
-                    opaqueCommands[i].material->shader->set("sky.top" , glm::vec3(0.3,0.6,1.0));
-                    opaqueCommands[i].material->shader->set("sky.middle" , glm::vec3(0.3,0.3,0.3));
+                    opaqueCommands[i].material->shader->set("sky.top" , glm::vec3(1,1,1.0));
+                    opaqueCommands[i].material->shader->set("sky.middle" , glm::vec3(0.5,0.4,0.5));
                     opaqueCommands[i].material->shader->set("sky.bottom" , glm::vec3(0.1,0.1,0));
                 }                
                     
