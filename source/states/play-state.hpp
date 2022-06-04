@@ -104,6 +104,10 @@ class Playstate : public our::State
         ImGui::DragFloat("Camera speedup factor", &controller->speedupFactor);
         ImGui::End();
         ImGui::Begin("health",0,ImGuiWindowFlags_NoDecoration|ImGuiWindowFlags_NoBackground|ImGuiWindowFlags_NoMove);
+        // change window position
+        ImGui::SetWindowPos(ImVec2(950,10));
+        // change window size
+        ImGui::SetWindowSize(ImVec2(300,50));
         ImGui::ProgressBar(player->health);
         ImGui::End();
     }
