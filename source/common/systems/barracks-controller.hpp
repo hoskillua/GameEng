@@ -58,20 +58,15 @@ namespace our
 
                         // player_entity->getComponent<PlayerControllerComponent>()->money += money;
                         std::cout << "You have taken " << controller->money << "$" << std::endl;
-                        // todo, change color of baracks to red
+
+                        //entity->localTransform.position = glm::vec3(-1000, -1000, -1000);
+                        world->markForRemoval(entity);
                     }
 
-                    // todo
-                    /*
-                    if(60 sec){
-                        is_money_taken = false;
-                        money = rand() % 100;
-                        change_color_to_normal();
-                    }
-                    */
+                    
                 }
             }
-
+            world->deleteMarkedEntities();
             // Get the entity that we found via getOwner of camera (we could use controller->getOwner())
         }
 
