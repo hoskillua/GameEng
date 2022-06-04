@@ -6,6 +6,7 @@
 #include "free-camera-controller.hpp"
 #include "movement.hpp"
 #include "player-controller.hpp"
+#include "cannon-controller.hpp"
 
 namespace our {
 
@@ -24,6 +25,8 @@ namespace our {
             component = entity->addComponent<MovementComponent>();
         } else if (type == PlayerControllerComponent::getID()) {
             component = entity->addComponent<PlayerControllerComponent>();
+        } else if (type == CannonControllerComponent::getID()) {
+            component = entity->addComponent<CannonControllerComponent>();
         }
         if(component) component->deserialize(data);
     }

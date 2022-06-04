@@ -201,7 +201,7 @@
             {
                 "position": [0, 0, 0],
                 "rotation": [0, 0, 0],
-                "scale": [1, 0.7, 0.7],
+                "scale": [1.2, 0.7, 0.7],
                 "components": [
                     {
                         "type": "Player Controller",
@@ -284,18 +284,20 @@
                 "scale": [0.05, 0.05, 0.05],
                 "components": [
                     {
-                        "type": "CannonMovement"
+                        "type": "CannonMovement",
+                        "angularVelocity": [0, 20, 0],
+                        "range": 35.0
                     },
                     {
                         "type": "Mesh Renderer",
                         "mesh": "cannon",
                         "material": "cannon"
-                    },
-                    {
-                        "type": "Movement",
-                        "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 20, 0]
-                    }
+                    }/*,*/
+                    // {
+                    //     "type": "Movement",
+                    //     "linearVelocity": [0, 0, 0],
+                    //     "angularVelocity": [0, 20, 0]
+                    // }
                 ]
             },
             {
@@ -303,15 +305,11 @@
                 "rotation": [0, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
                 "components": [
+
                     {
                         "type": "Mesh Renderer",
                         "mesh": "cannon",
                         "material": "cannon"
-                    },
-                    {
-                        "type": "Movement",
-                        "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 20, 0]
                     }
                 ]
             }
