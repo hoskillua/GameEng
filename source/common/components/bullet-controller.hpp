@@ -12,6 +12,7 @@ namespace our
     public:
         glm::vec3 startPosition;
         glm::vec3 endPosition;
+        float damage = 0.05f;
         float velocity;
         // The ID of this component type is "Movement"
         static std::string getID() { return "Bullet Controller"; }
@@ -19,10 +20,12 @@ namespace our
         void deserializeDynamic(
             glm::vec3 startPosition,
             glm::vec3 endPosition,
+            float damage,
             float velocity)
         {
             this->startPosition = startPosition;
             this->endPosition = endPosition;
+            this->damage = damage;
             this->velocity = velocity;
         }
         void deserialize(const nlohmann::json &data) {}

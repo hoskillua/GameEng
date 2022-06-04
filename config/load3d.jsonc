@@ -41,7 +41,8 @@
                 "ambient": "assets/textures/ambient_occlusion.jpg",
                 "emissive": "assets/textures/emissive.jpg",
                 "roughness": "assets/textures/roughness.jpg",
-                "specular": "assets/textures/specular.jpg"
+                "specular": "assets/textures/specular.jpg",
+                "bullet": "assets/textures/BulletShell.jpg"
 
             },
             "meshes":{
@@ -54,7 +55,7 @@
                 "truck": "assets/models/truck.obj",
                 "cannon": "assets/models/cannon2.obj",
                 "barracks": "assets/models/barracks.obj",
-                "bullet": "assets/models/truck.obj"
+                "bullet": "assets/models/bullet.obj"
             },
             "samplers":{
                 "default":{},
@@ -82,6 +83,7 @@
                     },
                     "tint": [0.45, 0.4, 0.5, 1]
                 },
+                
                 "glass":{
                     "type": "textured",
                     "shader": "textured",
@@ -117,6 +119,26 @@
                     },
                     "tint": [1, 1, 1, 1],
                     "texture": "cannon",
+                    "diffusion": "cannon",
+                    "specular": "specular",
+                    "ambient_occlusion": "ambient",
+                    "roughness": "roughness",
+                    "emissive": "emissive",
+                    "sampler": "default"
+                },
+                "bullet":{
+                    "type": "lit",
+                    "shader": "lit",
+                    "pipelineState": {
+                        "faceCulling":{
+                            "enabled": false
+                        },
+                        "depthTesting":{
+                            "enabled": true
+                        }
+                    },
+                    "tint": [1, 1, 1, 1],
+                    "texture": "bullet",
                     "diffusion": "cannon",
                     "specular": "specular",
                     "ambient_occlusion": "ambient",

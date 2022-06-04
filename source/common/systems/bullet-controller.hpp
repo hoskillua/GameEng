@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../ecs/world.hpp"
-#include "../components/player-controller.hpp"
+#include "../components/mesh-renderer.hpp"
 #include "../components/cannon-controller.hpp"
 #include "../components/bullet-controller.hpp"
 #include "../application.hpp"
@@ -34,35 +34,38 @@ namespace our
         {
 
             BulletControllerComponent *controller = nullptr;
-            for (auto entity : world->getEntities())
-            {
-                controller = entity->getComponent<BulletControllerComponent>();
-                if (controller)
-                {
-                    Entity *entity = controller->getOwner();
-                    glm::vec3 &position = entity->localTransform.position;
-                    if (glm::distance(position, controller->endPosition) > 0.1f)
-                    {
-                        glm::vec3 direction = glm::normalize(controller->endPosition - controller->startPosition);
-                        position += direction * controller->velocity * deltaTime;
-                    }
-                    else{
-                        world->markForRemoval(entity);
-                    }
-                }
-            }
-        }
-        Entity *getPlayerEntity(World *world)
-        {
+            MeshRendererComponent *playermesh = nullptr;
+            PlayerControllerComponent *playercomponent = nullptr;
 
             for (auto entity : world->getEntities())
             {
                 if (entity->name == "player")
                 {
-                    return entity;
+                    playermesh = entity->getComponent<MeshRendererComponent>();
+                    playercomponent = entity->getComponent<PlayerControllerComponent>();
                 }
             }
-            return nullptr;
+
+            for (auto entity : world->getEntities())
+            {
+                controller = entity->getComponent<BulletControllerComponent>();
+                
+                if (controller)
+                {
+                    Entity *entity = controller->getOwner();
+                    glm::vec3 &position = entity->localTransform.position;
+                    if (glm::distance(position, controller->endPosition) > 0.5f)
+                    {
+                        glm::vec3 direction = glm::normalize(controller->endPosition - controller->startPosition);
+                        position += direction * controller->velocity * deltaTime;
+                    }
+                    else{
+                        playercomponent->health -= controller->damage;
+                        playermesh->material->transparent = true;
+                        world->markForRemoval(entity);
+                    }
+                }
+            }
         }
 
         void exit()

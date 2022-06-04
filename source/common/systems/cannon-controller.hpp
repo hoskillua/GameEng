@@ -68,8 +68,7 @@ namespace our
                         if (controller->timeElapsed > controller->reloadTime)
                         {
                             controller->timeElapsed = 0.0f;
-                            playercomponent->health -= controller->damage;
-                            FireBullet(position, playerPosition, rotation, world);
+                            FireBullet(position, playerPosition, rotation, controller->damage, world);
                         }
                         else
                         {
@@ -83,18 +82,20 @@ namespace our
                 // Get the entity that we found via getOwner of cannon (we could use controller->getOwner())
             }
         }
-        void FireBullet(glm::vec3 position, glm::vec3 playerPosition, glm::vec3 rotation, World *world)
+        void FireBullet(glm::vec3 position, glm::vec3 playerPosition, glm::vec3 rotation, float damage, World *world)
         {
             // Create a new entity
             Entity *bullet = world->add();
             bullet->name = "bullet";
+            bullet->localTransform.scale = glm::vec3(-0.04f, 0.04f, 0.04f);
             bullet->localTransform.position = position;
             bullet->localTransform.rotation = rotation;
+            //bullet->localTransform.rotation.y -= glm::pi<float>() / 2.0f;
             // Add a BulletComponent to the entity
             MeshRendererComponent* mesh = bullet->addComponent<MeshRendererComponent>();
-            mesh->deserializeDynamic("bullet","metal");
+            mesh->deserializeDynamic("bullet","bullet");
             BulletControllerComponent* bulletController = bullet->addComponent<BulletControllerComponent>();
-            bulletController->deserializeDynamic(position, playerPosition, 50.0f);
+            bulletController->deserializeDynamic(position, playerPosition, damage, 150.0f);
         }
         // When the state exits, it should call this function to ensure the mouse is unlocked
         void exit()
