@@ -20,14 +20,12 @@ namespace our
     class PlayerControllerSystem
     {
         Application *app; // The application in which the state runs
-    public:
-        
-        // When a state enters, it should call this function and give it the pointer to the application
 
+    public:
+        // When a state enters, it should call this function and give it the pointer to the application
         void enter(Application *app)
         {
             this->app = app;
-            // draw rectangle for health bar
         }
 
         // This should be called every frame to update all entities containing a FreeCameraControllerComponent
@@ -63,6 +61,8 @@ namespace our
             glm::vec3 &rotation = entity->localTransform.rotation;
             glm::vec3 positionPrev = position;
             glm::vec3 rotationPrev = rotation;
+
+
 
             // If the left mouse button is pressed, we get the change in the mouse location
             // and use it to update the camera rotation
@@ -144,10 +144,11 @@ namespace our
             }
             for (auto entity : world->getEntities())
             {
-                if (entity != controller->getOwner() && entity->name != "ground")
+                if(entity != controller->getOwner() && entity->name != "ground" && entity->name != "bullet")
                 {
                     glm::vec3 entityPos = entity->localTransform.position;
                     if(glm::distance(entityPos, position) < controller->getOwner()->radius + entity->radius)
+
                     {
                         position = positionPrev;
                         rotation = rotationPrev;

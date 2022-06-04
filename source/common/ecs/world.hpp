@@ -44,6 +44,11 @@ namespace our {
 
         // This removes the elements in "markedForRemoval" from the "entities" set.
         // Then each of these elements are deleted.
+        void deleteEntityNow(Entity* entity){
+            if(entities.find(entity) != entities.end())
+                entities.erase(entity);
+            delete entity;
+        }
         void deleteMarkedEntities(){
             for(auto entity: markedForRemoval){
                 entities.erase(entity);
