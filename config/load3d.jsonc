@@ -242,7 +242,8 @@
                         "VerticalAcceleration": 20,
                         "AngularAcceleration": 0.5,
                         "AngularSpeed": 0.1,
-                        "radius": 12
+                        "radius": 12,
+                        "health": 10
                     },
                     {
                         "type": "Mesh Renderer",
