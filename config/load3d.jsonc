@@ -48,7 +48,8 @@
                 "warhouse": "assets/models/well-low-rus-obj.obj",
                 "truck": "assets/models/truck.obj",
                 "cannon": "assets/models/cannon2.obj",
-                "barracks": "assets/models/barracks.obj"
+                "barracks": "assets/models/barracks.obj",
+                "bullet": "assets/models/truck.obj"
             },
             "samplers":{
                 "default":{},
@@ -249,7 +250,7 @@
                         "AngularAcceleration": 0.5,
                         "AngularSpeed": 0.1,
                         "radius": 12,
-                        "health": 10
+                        "health": 1
                     },
                     {
                         "type": "Mesh Renderer",

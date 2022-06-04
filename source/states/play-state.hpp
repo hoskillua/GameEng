@@ -8,6 +8,7 @@
 #include <systems/player-controller.hpp>
 #include <systems/barracks-controller.hpp>
 #include <systems/cannon-controller.hpp>
+#include <systems/bullet-controller.hpp>
 #include <systems/movement.hpp>
 #include <asset-loader.hpp>
 
@@ -21,6 +22,7 @@ class Playstate : public our::State
     our::PlayerControllerSystem playerController;
     our::BarracksControllerSystem barracksController;
     our::CannonControllerSystem cannonController;
+    our::BulletControllerSystem bulletController;
     our::MovementSystem movementSystem;
 
     void onInitialize() override
@@ -42,6 +44,7 @@ class Playstate : public our::State
         playerController.enter(getApp());
         barracksController.enter(getApp());
         cannonController.enter(getApp());
+        bulletController.enter(getApp());
         // Then we initialize the renderer
         auto size = getApp()->getFrameBufferSize();
         renderer.initialize(size, config["renderer"]);
@@ -55,6 +58,7 @@ class Playstate : public our::State
         playerController.update(&world, (float)deltaTime);
         barracksController.update(&world, (float)deltaTime);
         cannonController.update(&world, (float)deltaTime);
+        bulletController.update(&world, (float)deltaTime);
         // And finally we use the renderer system to draw the scene
         renderer.render(&world);
     }
@@ -68,6 +72,7 @@ class Playstate : public our::State
         playerController.exit();
         barracksController.exit();
         cannonController.exit();
+        bulletController.exit();
         // and we delete all the loaded assets to free memory on the RAM and the VRAM
         our::clearAllAssets();
     }
