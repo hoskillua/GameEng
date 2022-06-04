@@ -242,13 +242,13 @@ namespace our {
                 for (int j = 0; j < lights.size(); j++)
                 {
                             
-                    opaqueCommands[i].material->shader->set("lights[0].type" , lights[0]->type);
-                    opaqueCommands[i].material->shader->set("lights[0].position" ,  lights[0]->getOwner()->localTransform.position );
-                    opaqueCommands[i].material->shader->set("lights[0].direction" , glm::vec3(0, 1, 0));
-                    opaqueCommands[i].material->shader->set("lights[0].diffuse" , lights[0]->diffuse);
-                    opaqueCommands[i].material->shader->set("lights[0].specular" , lights[0]->specular);
-                    opaqueCommands[i].material->shader->set("lights[0].attenuation" , lights[0]->attenuation);
-                    opaqueCommands[i].material->shader->set("lights[0].cone_angles" , glm::vec2(glm::radians(10.0f), glm::radians(11.0f)));
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].type" , lights[j]->type);
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].position" ,  lights[j]->getOwner()->localTransform.position );
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].direction" , lights[j]->getOwner()->localTransform.rotation);
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].diffusion" , lights[j]->diffusion);
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].specular" , lights[j]->specular);
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].attenuation" , lights[j]->attenuation);
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].cone_angles" , glm::vec2(glm::radians(90.0f), glm::radians(90.0f)));
 
                     opaqueCommands[i].material->shader->set("sky.top" , glm::vec3(1,1,1.0));
                     opaqueCommands[i].material->shader->set("sky.middle" , glm::vec3(0.5,0.4,0.5));

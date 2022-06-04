@@ -20,7 +20,7 @@ namespace our {
     class LightComponent : public Component {
     public:
         int type;
-        glm::vec3 diffuse = {0,0,0};
+        glm::vec3 diffusion = {0,0,0};
         glm::vec3 specular = {0,0,0};
         glm::vec3 attenuation = {0,0,0};
         glm::vec3 cone_angles = {0,0,0};

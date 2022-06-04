@@ -3,6 +3,7 @@
 #include <glm/glm.hpp>
 #include "../deserialize-utils.hpp"
 #include <glm/gtc/matrix_transform.hpp> 
+#include <iostream>
 
 namespace our {
     // Reads Light parameters from the given json object
@@ -17,7 +18,8 @@ namespace our {
             type = LightType::DIRECTIONAL;
         }
         
-        diffuse = data.value("diffusion", diffuse);
+        diffusion = data.value("diffusion", diffusion);
+        
         specular = data.value("specular", specular);
         attenuation = data.value("attenuation", attenuation);
         cone_angles = data.value("cone_angles", cone_angles);

@@ -211,7 +211,7 @@
                     {
                         "type": "Light",
                         "lightType": "directional",
-                        "diffuse":[1,0.2,0.1],
+                        "diffusion":[1,0.2,0.1],
                         "specular":[1,1,1],
                         "attenuation":[1,0,0],
                         "cone_angles":[0,0,0]

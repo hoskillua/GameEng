@@ -10,7 +10,7 @@ struct Light {
     int type;
     vec3 position;
     vec3 direction;
-    vec3 diffuse;
+    vec3 diffusion;
     vec3 specular;
     vec3 attenuation; // x*d^2 + y*d + z
     vec2 cone_angles; // x: inner_angle, y: outer_angle
@@ -53,9 +53,9 @@ void main(){
     vec3 view = normalize(fs_in.view);
     vec3 normal = normalize(fs_in.normal);
 
-    vec3 material_diffuse = texture(material.diffusion, fs_in.tex_coord).rgb;
+    vec3 material_diffusion = texture(material.diffusion, fs_in.tex_coord).rgb;
     vec3 material_specular = texture(material.specular, fs_in.tex_coord).rgb;
-    vec3 material_ambient = material_diffuse * texture(material.ambient_occlusion, fs_in.tex_coord).r;
+    vec3 material_ambient = material_diffusion * texture(material.ambient_occlusion, fs_in.tex_coord).r;
     
     float material_roughness = texture(material.roughness, fs_in.tex_coord).r;
     float material_shininess = 2.0 / pow(clamp(material_roughness, 0.001, 0.999), 4.0) - 2.0;
@@ -77,7 +77,7 @@ void main(){
             direction_to_light = normalize(light.position - fs_in.world);
         }
         
-        vec3 diffuse = light.diffuse * material_diffuse * max(0, dot(normal, direction_to_light));
+        vec3 diffusion = light.diffusion * material_diffusion * max(0, dot(normal, direction_to_light));
         
         vec3 reflected = reflect(-direction_to_light, normal);
         
@@ -93,6 +93,6 @@ void main(){
             }
         }
 
-        frag_color.rgb += (diffuse + specular) * attenuation;
+        frag_color.rgb += (diffusion + specular) * attenuation;
     }
 }
