@@ -11,7 +11,7 @@
     },
     "scene": {
         "renderer":{
-            //"sky": "assets/textures/sky.jpg",
+            "sky": "assets/textures/sky.jpg",
             "postprocess": "assets/shaders/postprocess/vignette.frag"
         },
         "assets":{
@@ -37,7 +37,12 @@
                 "monkey": "assets/textures/monkey.png",
                 "cannon": "assets/textures/Turret_Color.jpg",
                 "barracks": "assets/textures/barracks.jpg" ,
-                "warhouse": "assets/textures/well_texture.jpg"
+                "warhouse": "assets/textures/well_texture.jpg",
+                "ambient": "assets/textures/ambient_occlusion.jpg",
+                "emissive": "assets/textures/emissive.jpg",
+                "roughness": "assets/textures/roughness.jpg",
+                "specular": "assets/textures/specular.jpg"
+
             },
             "meshes":{
                 "cube": "assets/models/cube.obj",
@@ -99,8 +104,8 @@
                     "sampler": "pixelated"
                 },
                 "cannon":{
-                    "type": "textured",
-                    "shader": "textured",
+                    "type": "lit",
+                    "shader": "lit",
                     "pipelineState": {
                         "faceCulling":{
                             "enabled": false
@@ -111,11 +116,16 @@
                     },
                     "tint": [1, 1, 1, 1],
                     "texture": "cannon",
+                    "diffusion": "cannon",
+                    "specular": "specular",
+                    "ambient_occlusion": "ambient",
+                    "roughness": "roughness",
+                    "emissive": "emissive",
                     "sampler": "default"
                 },
                 "warhouse":{
-                    "type": "textured",
-                    "shader": "textured",
+                    "type": "lit",
+                    "shader": "lit",
                     "pipelineState": {
                         "faceCulling":{
                             "enabled": false
@@ -126,11 +136,16 @@
                     },
                     "tint": [1, 1, 1, 1],
                     "texture": "warhouse",
+                    "diffusion": "warhouse",
+                    "specular": "specular",
+                    "ambient_occlusion": "ambient",
+                    "emissive":"emissive",
+                    "roughness": "roughness",
                     "sampler": "default"
                 },
                 "barracks":{
-                    "type": "textured",
-                    "shader": "textured",
+                    "type": "lit",
+                    "shader": "lit",
                     "pipelineState": {
                         "faceCulling":{
                             "enabled": false
@@ -141,6 +156,11 @@
                     },
                     "tint": [1, 1, 1, 1],
                     "texture": "barracks",
+                    "diffusion": "barracks",
+                    "specular": "specular",
+                    "ambient_occlusion": "ambient",
+                    "roughness": "roughness",
+                    "emissive":"emissive",
                     "sampler": "default"
                 },
                 "grass":{
@@ -174,8 +194,8 @@
                     "sampler": "default"
                 },
                 "moon":{
-                    "type": "textured",
-                    "shader": "textured",
+                    "type": "lit",
+                    "shader": "lit",
                     "pipelineState": {
                         "faceCulling":{
                             "enabled": false
@@ -186,6 +206,11 @@
                     },
                     "tint": [1, 1, 1, 1],
                     "texture": "moon",
+                    "diffusion": "moon",
+                    "specular": "specular",
+                    "ambient_occlusion": "ambient",
+                    "roughness": "roughness",
+                    "emissive":"emissive",
                     "sampler": "default"
                 }
             }
@@ -335,7 +360,17 @@
                         "type": "Movement",
                         "linearVelocity": [0, 0, 0],
                         "angularVelocity": [0, 20, 0]
+                    },
+                    {
+                        "type": "Light",
+                        "lightType": "directional",
+                        "diffuse":[1,0.2,0.1],
+                        "specular":[1,1,1],
+                        "attenuation":[1,0,0],
+                        "cone_angles":[0,0,0]
+
                     }
+
                 ]
             },
             {
@@ -346,7 +381,7 @@
                     {
                         "type": "Mesh Renderer",
                         "mesh": "barracks" ,
-                        "material": "cannon"
+                        "material": "barracks"
                     },
                     {
                         "type": "barracks controller"
