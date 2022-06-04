@@ -50,16 +50,13 @@ namespace our
                     if (glm::distance(playerPos, position) < controller->radius && !controller->is_money_taken)
                     {
 
-                        // done: add money to player
                         controller->is_money_taken = true;
                         controller->money=rand()%100;
-                        player_entity->getComponent<PlayerControllerComponent>()->money += controller->money;
+                        player_entity->getComponent<PlayerControllerComponent>()->money += controller->money+10;
                         std::cout << "player money=" << player_entity->getComponent<PlayerControllerComponent>()->money << std::endl;
 
-                        // player_entity->getComponent<PlayerControllerComponent>()->money += money;
                         std::cout << "You have taken " << controller->money << "$" << std::endl;
 
-                        //entity->localTransform.position = glm::vec3(-1000, -1000, -1000);
                         world->markForRemoval(entity);
                     }
 
@@ -67,19 +64,8 @@ namespace our
                 }
             }
             world->deleteMarkedEntities();
-            // Get the entity that we found via getOwner of camera (we could use controller->getOwner())
         }
 
-        // bool is_collided_with_player(BarracksControllerComponent *controller)
-        // {
-        //     Entity *player_entity =getPlayerEntity();
-        //     glm::vec3 entityPos = player_entity->localTransform.position;
-        //     if(glm::distance(entityPos, position) < controller->radius)
-        //     {
-        //         return true;
-        //     }
-        //     return false;
-        // }
 
         Entity *getPlayerEntity(World *world)
         {
