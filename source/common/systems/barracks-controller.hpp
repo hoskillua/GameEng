@@ -63,7 +63,6 @@ namespace our
                     
                 }
             }
-            world->deleteMarkedEntities();
         }
 
 
