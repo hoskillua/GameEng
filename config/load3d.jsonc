@@ -42,12 +42,8 @@
                 "sphere": "assets/models/sphere.obj",
                 "warhouse": "assets/models/55555.obj",
                 "truck": "assets/models/truck.obj",
-<<<<<<< Updated upstream
-                "cannon": "assets/models/cannon2.obj"
-=======
                 "cannon": "assets/models/cannon.obj",
                 "barracks": "assets/models/barracks.obj"
->>>>>>> Stashed changes
             },
             "samplers":{
                 "default":{},
