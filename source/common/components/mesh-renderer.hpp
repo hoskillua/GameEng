@@ -15,6 +15,11 @@ namespace our {
 
         // The ID of this component type is "Mesh Renderer"
         static std::string getID() { return "Mesh Renderer"; }
+        
+        void deserializeDynamic(std::string mesh, std::string material) {
+            this->mesh = AssetLoader<Mesh>::get(mesh);
+            this->material = AssetLoader<Material>::get(material);
+        }
 
         // Receives the mesh & material from the AssetLoader by the names given in the json object
         void deserialize(const nlohmann::json& data) override;

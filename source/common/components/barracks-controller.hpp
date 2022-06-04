@@ -20,6 +20,8 @@ namespace our
             static std::string getID() { return "barracks controller"; }
 
     void deserialize(const nlohmann::json& data){}
+    //deconstructor
+
     };
 
 

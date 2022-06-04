@@ -11,7 +11,7 @@
     },
     "scene": {
         "renderer":{
-            //"sky": "assets/textures/sky.jpg",
+            "sky": "assets/textures/sky.jpg",
             "postprocess": "assets/shaders/postprocess/vignette.frag"
         },
         "assets":{
@@ -37,7 +37,12 @@
                 "monkey": "assets/textures/monkey.png",
                 "cannon": "assets/textures/Turret_Color.jpg",
                 "barracks": "assets/textures/barracks.jpg" ,
-                "warhouse": "assets/textures/well_texture.jpg"
+                "warhouse": "assets/textures/well_texture.jpg",
+                "ambient": "assets/textures/ambient_occlusion.jpg",
+                "emissive": "assets/textures/emissive.jpg",
+                "roughness": "assets/textures/roughness.jpg",
+                "specular": "assets/textures/specular.jpg"
+
             },
             "meshes":{
                 "cube": "assets/models/cube.obj",
@@ -48,7 +53,8 @@
                 "warhouse": "assets/models/well-low-rus-obj.obj",
                 "truck": "assets/models/truck.obj",
                 "cannon": "assets/models/cannon2.obj",
-                "barracks": "assets/models/barracks.obj"
+                "barracks": "assets/models/barracks.obj",
+                "bullet": "assets/models/truck.obj"
             },
             "samplers":{
                 "default":{},
@@ -99,8 +105,8 @@
                     "sampler": "pixelated"
                 },
                 "cannon":{
-                    "type": "textured",
-                    "shader": "textured",
+                    "type": "lit",
+                    "shader": "lit",
                     "pipelineState": {
                         "faceCulling":{
                             "enabled": false
@@ -111,11 +117,16 @@
                     },
                     "tint": [1, 1, 1, 1],
                     "texture": "cannon",
+                    "diffusion": "cannon",
+                    "specular": "specular",
+                    "ambient_occlusion": "ambient",
+                    "roughness": "roughness",
+                    "emissive": "emissive",
                     "sampler": "default"
                 },
                 "warhouse":{
-                    "type": "textured",
-                    "shader": "textured",
+                    "type": "lit",
+                    "shader": "lit",
                     "pipelineState": {
                         "faceCulling":{
                             "enabled": false
@@ -126,11 +137,16 @@
                     },
                     "tint": [1, 1, 1, 1],
                     "texture": "warhouse",
+                    "diffusion": "warhouse",
+                    "specular": "specular",
+                    "ambient_occlusion": "ambient",
+                    "emissive":"emissive",
+                    "roughness": "roughness",
                     "sampler": "default"
                 },
                 "barracks":{
-                    "type": "textured",
-                    "shader": "textured",
+                    "type": "lit",
+                    "shader": "lit",
                     "pipelineState": {
                         "faceCulling":{
                             "enabled": false
@@ -141,6 +157,11 @@
                     },
                     "tint": [1, 1, 1, 1],
                     "texture": "barracks",
+                    "diffusion": "barracks",
+                    "specular": "specular",
+                    "ambient_occlusion": "ambient",
+                    "roughness": "roughness",
+                    "emissive":"emissive",
                     "sampler": "default"
                 },
                 "grass":{
@@ -174,8 +195,8 @@
                     "sampler": "default"
                 },
                 "moon":{
-                    "type": "textured",
-                    "shader": "textured",
+                    "type": "lit",
+                    "shader": "lit",
                     "pipelineState": {
                         "faceCulling":{
                             "enabled": false
@@ -186,6 +207,11 @@
                     },
                     "tint": [1, 1, 1, 1],
                     "texture": "moon",
+                    "diffusion": "moon",
+                    "specular": "specular",
+                    "ambient_occlusion": "ambient",
+                    "roughness": "roughness",
+                    "emissive":"emissive",
                     "sampler": "default"
                 }
             }
@@ -249,7 +275,7 @@
                         "AngularAcceleration": 0.5,
                         "AngularSpeed": 0.1,
                         "radius": 12,
-                        "health": 10
+                        "health": 1
                     },
                     {
                         "type": "Mesh Renderer",
@@ -338,11 +364,53 @@
                         "type": "Movement",
                         "linearVelocity": [0, 0, 0],
                         "angularVelocity": [0, 20, 0]
+                    },
+                    {
+                        "type": "Light",
+                        "lightType": "directional",
+                        "diffuse":[1,0.2,0.1],
+                        "specular":[1,1,1],
+                        "attenuation":[1,0,0],
+                        "cone_angles":[0,0,0]
+
+                    }
+
+                ]
+            },
+            {
+                "position": [70,0, 90],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
                     }
                 ]
             },
             {
-                "position": [20,0, 50],
+                "position": [-20,0, 40],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "cannon"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [20,0, 90],
                 "rotation": [-90, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
                 "radius": 4,

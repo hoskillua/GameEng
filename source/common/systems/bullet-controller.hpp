@@ -2,8 +2,8 @@
 
 #include "../ecs/world.hpp"
 #include "../components/player-controller.hpp"
-#include "../components/barracks-controller.hpp"
-
+#include "../components/cannon-controller.hpp"
+#include "../components/bullet-controller.hpp"
 #include "../application.hpp"
 
 #include <stdlib.h>
@@ -18,12 +18,11 @@
 namespace our
 {
 
-    class BarracksControllerSystem
+    class BulletControllerSystem
     {
         Application *app; // The application in which the state runs
 
     public:
-
         // When a state enters, it should call this function and give it the pointer to the application
         void enter(Application *app)
         {
@@ -34,38 +33,25 @@ namespace our
         void update(World *world, float deltaTime)
         {
 
-            BarracksControllerComponent *controller = nullptr;
+            BulletControllerComponent *controller = nullptr;
             for (auto entity : world->getEntities())
             {
-                controller = entity->getComponent<BarracksControllerComponent>();
+                controller = entity->getComponent<BulletControllerComponent>();
                 if (controller)
                 {
                     Entity *entity = controller->getOwner();
                     glm::vec3 &position = entity->localTransform.position;
-
-                    Entity *player_entity = getPlayerEntity(world);
-
-                    glm::vec3 playerPos = player_entity->localTransform.position;
-
-                    if (glm::distance(playerPos, position) < controller->radius && !controller->is_money_taken)
+                    if (glm::distance(position, controller->endPosition) > 0.1f)
                     {
-
-                        controller->is_money_taken = true;
-                        controller->money=rand()%100;
-                        player_entity->getComponent<PlayerControllerComponent>()->money += controller->money+10;
-                        std::cout << "player money=" << player_entity->getComponent<PlayerControllerComponent>()->money << std::endl;
-
-                        std::cout << "You have taken " << controller->money << "$" << std::endl;
-
+                        glm::vec3 direction = glm::normalize(controller->endPosition - controller->startPosition);
+                        position += direction * controller->velocity * deltaTime;
+                    }
+                    else{
                         world->markForRemoval(entity);
                     }
-
-                    
                 }
             }
         }
-
-
         Entity *getPlayerEntity(World *world)
         {
 
