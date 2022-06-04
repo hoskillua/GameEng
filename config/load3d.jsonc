@@ -238,7 +238,8 @@
             {
                 "position": [0, 0, 0],
                 "rotation": [0, 0, 0],
-                "scale": [1.2, 0.7, 0.7],
+                "scale": [1.5, 0.7, 0.7],
+                "radius": 8,
                 "name":"player",
                 "components": [
                     {
@@ -246,8 +247,7 @@
                         "VerticalSpeed": 16,
                         "VerticalAcceleration": 20,
                         "AngularAcceleration": 0.5,
-                        "AngularSpeed": 0.1,
-                        "radius": 12
+                        "AngularSpeed": 0.1
                     },
                     {
                         "type": "Mesh Renderer",
@@ -320,6 +320,7 @@
                 "position": [-25, 0, -15],
                 "rotation": [0, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
+                "radius": 6,
                 "components": [
                     {
                         "type": "CannonMovement",
@@ -339,39 +340,10 @@
                 ]
             },
             {
-                "position": [50,0, 50],
-                "rotation": [-90, 0  , 0],
+                "position": [20,0, 50],
+                "rotation": [-90, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "barracks" ,
-                        "material": "cannon"
-                    },
-                    {
-                        "type": "barracks controller"
-                    }
-                ]
-            },
-            {
-                "position": [90,0, 50],
-                "rotation": [-90, 0  , 0],
-                "scale": [0.05, 0.05, 0.05],
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "barracks" ,
-                        "material": "cannon"
-                    },
-                    {
-                        "type": "barracks controller"
-                    }
-                ]
-            },
-            {
-                "position": [10,0, 90],
-                "rotation": [-90, 0  , 0],
-                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
                 "components": [
                     {
                         "type": "Mesh Renderer",
@@ -399,6 +371,7 @@
                 "position": [-15, 0, 55],
                 "rotation": [0, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
+                "radius": 6,
                 "components": [
                     {
                         "type": "CannonMovement",
@@ -417,6 +390,7 @@
                 "position": [55, 0, 55],
                 "rotation": [0, 0, 0],
                 "scale": [0.1, 0.1, 0.1],
+                "radius": 12,
                 "components": [
                 
                     {
