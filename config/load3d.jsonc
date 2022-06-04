@@ -35,7 +35,9 @@
                 "wood": "assets/textures/wood.jpg",
                 "glass": "assets/textures/glass-panels.png",
                 "monkey": "assets/textures/monkey.png",
-                "cannon": "assets/textures/Turret_Color.jpg"
+                "cannon": "assets/textures/Turret_Color.jpg",
+                "barracks": "assets/textures/barracks.jpg" ,
+                "warhouse": "assets/textures/well_texture.jpg"
             },
             "meshes":{
                 "cube": "assets/models/cube.obj",
@@ -43,9 +45,10 @@
                 "plane": "assets/models/plane.obj",
                 "plane2": "assets/models/plane2.obj",
                 "sphere": "assets/models/sphere.obj",
-                "warhouse": "assets/models/55555.obj",
+                "warhouse": "assets/models/well-low-rus-obj.obj",
                 "truck": "assets/models/truck.obj",
-                "cannon": "assets/models/cannon.obj"
+                "cannon": "assets/models/cannon2.obj",
+                "barracks": "assets/models/barracks.obj"
             },
             "samplers":{
                 "default":{},
@@ -110,6 +113,36 @@
                     "texture": "cannon",
                     "sampler": "default"
                 },
+                "warhouse":{
+                    "type": "textured",
+                    "shader": "textured",
+                    "pipelineState": {
+                        "faceCulling":{
+                            "enabled": false
+                        },
+                        "depthTesting":{
+                            "enabled": true
+                        }
+                    },
+                    "tint": [1, 1, 1, 1],
+                    "texture": "warhouse",
+                    "sampler": "default"
+                },
+                "barracks":{
+                    "type": "textured",
+                    "shader": "textured",
+                    "pipelineState": {
+                        "faceCulling":{
+                            "enabled": false
+                        },
+                        "depthTesting":{
+                            "enabled": true
+                        }
+                    },
+                    "tint": [1, 1, 1, 1],
+                    "texture": "barracks",
+                    "sampler": "default"
+                },
                 "grass":{
                     "type": "textured",
                     "shader": "textured",
@@ -165,7 +198,7 @@
                     {
                         "type": "Camera",
                         "cameraType": "orthographic",
-                        "orthoHeight": 35
+                        "orthoHeight": 60
                     },
                     {
                         "type": "Free Camera Controller"
@@ -193,6 +226,7 @@
                 "position": [0, -1, 0],
                 "rotation": [-90, 0, 0],
                 "scale": [1000, 1000, 1],
+                "name": "ground",
                 "components": [
                     {
                         "type": "Mesh Renderer",
@@ -204,14 +238,16 @@
             {
                 "position": [0, 0, 0],
                 "rotation": [0, 0, 0],
-                "scale": [0.7, 0.7, 0.7],
+                "scale": [1.2, 0.7, 0.7],
+                "name":"player",
                 "components": [
                     {
                         "type": "Player Controller",
                         "VerticalSpeed": 16,
                         "VerticalAcceleration": 20,
                         "AngularAcceleration": 0.5,
-                        "AngularSpeed": 0.1
+                        "AngularSpeed": 0.1,
+                        "radius": 12
                     },
                     {
                         "type": "Mesh Renderer",
@@ -220,71 +256,76 @@
                     }
                 ]
             },
+            // {
+            //     "position": [0, 1, 2],
+            //     "rotation": [0, 0, 0],
+            //     "scale": [2, 2, 2],
+            //     "components": [
+            //         {
+            //             "type": "Mesh Renderer",
+            //             "mesh": "plane",
+            //             "material": "glass"
+            //         }
+            //     ]
+            // },
+            // {
+            //     "position": [0, 1, -2],
+            //     "rotation": [0, 0, 0],
+            //     "scale": [2, 2, 2],
+            //     "components": [
+            //         {
+            //             "type": "Mesh Renderer",
+            //             "mesh": "plane",
+            //             "material": "glass"
+            //         }
+            //     ]
+            // },
+            // {
+            //     "position": [2, 1, 0],
+            //     "rotation": [0, 90, 0],
+            //     "scale": [2, 2, 2],
+            //     "components": [
+            //         {
+            //             "type": "Mesh Renderer",
+            //             "mesh": "plane",
+            //             "material": "glass"
+            //         }
+            //     ]
+            // },
+            // {
+            //     "position": [-2, 1, 0],
+            //     "rotation": [0, 90, 0],
+            //     "scale": [2, 2, 2],
+            //     "components": [
+            //         {
+            //             "type": "Mesh Renderer",
+            //             "mesh": "plane",
+            //             "material": "glass"
+            //         }
+            //     ]
+            // },
+            // {
+            //     "position": [0, 3, 0],
+            //     "rotation": [90, 0, 0],
+            //     "scale": [2, 2, 2],
+            //     "components": [
+            //         {
+            //             "type": "Mesh Renderer",
+            //             "mesh": "plane",
+            //             "material": "glass"
+            //         }
+            //     ]
+            // },
             {
-                "position": [0, 1, 2],
-                "rotation": [0, 0, 0],
-                "scale": [2, 2, 2],
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "plane",
-                        "material": "glass"
-                    }
-                ]
-            },
-            {
-                "position": [0, 1, -2],
-                "rotation": [0, 0, 0],
-                "scale": [2, 2, 2],
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "plane",
-                        "material": "glass"
-                    }
-                ]
-            },
-            {
-                "position": [2, 1, 0],
-                "rotation": [0, 90, 0],
-                "scale": [2, 2, 2],
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "plane",
-                        "material": "glass"
-                    }
-                ]
-            },
-            {
-                "position": [-2, 1, 0],
-                "rotation": [0, 90, 0],
-                "scale": [2, 2, 2],
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "plane",
-                        "material": "glass"
-                    }
-                ]
-            },
-            {
-                "position": [0, 3, 0],
-                "rotation": [90, 0, 0],
-                "scale": [2, 2, 2],
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "plane",
-                        "material": "glass"
-                    }
-                ]
-            },
-            {
-                "position": [-15, 0, -15],
+                "position": [-25, 0, -15],
                 "rotation": [0, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
                 "components": [
+                    {
+                        "type": "CannonMovement",
+                        "angularVelocity": [0, 20, 0],
+                        "range": 35.0
+                    },
                     {
                         "type": "Mesh Renderer",
                         "mesh": "cannon",
@@ -293,24 +334,65 @@
                     {
                         "type": "Movement",
                         "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 7, 0]
+                        "angularVelocity": [0, 20, 0]
                     }
                 ]
             },
+            {
+                "position": [20,0, 50],
+                "rotation": [0, 0  , 90],
+                "scale": [0.05, 0.05, 0.05],
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "cannon"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            // {
+            //     "position": [10,0, 10],
+            //     "rotation": [0, 0  , 90],
+            //     "scale": [0.05, 0.05, 0.05],
+            //     "components": [
+            //         {
+            //             "type": "Mesh Renderer",
+            //             "mesh": "barracks" ,
+            //             "material": "cannon"
+            //         }
+            //     ]
+            // },
             {
                 "position": [-15, 0, 55],
                 "rotation": [0, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
                 "components": [
                     {
+                        "type": "CannonMovement",
+                        "angularVelocity": [0, 20, 0],
+                        "range": 35.0
+                    },
+
+                    {
                         "type": "Mesh Renderer",
                         "mesh": "cannon",
                         "material": "cannon"
-                    },
+                    }
+                ]
+            },
+            {
+                "position": [55, 0, 55],
+                "rotation": [0, 0, 0],
+                "scale": [0.1, 0.1, 0.1],
+                "components": [
+                
                     {
-                        "type": "Movement",
-                        "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 7, 0]
+                        "type": "Mesh Renderer",
+                        "mesh": "warhouse",
+                        "material": "warhouse"
                     }
                 ]
             }

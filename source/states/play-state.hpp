@@ -6,6 +6,8 @@
 #include <systems/forward-renderer.hpp>
 #include <systems/free-camera-controller.hpp>
 #include <systems/player-controller.hpp>
+#include <systems/barracks-controller.hpp>
+#include <systems/cannon-controller.hpp>
 #include <systems/movement.hpp>
 #include <asset-loader.hpp>
 
@@ -17,6 +19,8 @@ class Playstate : public our::State
     our::ForwardRenderer renderer;
     our::FreeCameraControllerSystem cameraController;
     our::PlayerControllerSystem playerController;
+    our::BarracksControllerSystem barracksController;
+    our::CannonControllerSystem cannonController;
     our::MovementSystem movementSystem;
 
     void onInitialize() override
@@ -36,6 +40,8 @@ class Playstate : public our::State
         // We initialize the camera controller system since it needs a pointer to the app
         cameraController.enter(getApp());
         playerController.enter(getApp());
+        barracksController.enter(getApp());
+        cannonController.enter(getApp());
         // Then we initialize the renderer
         auto size = getApp()->getFrameBufferSize();
         renderer.initialize(size, config["renderer"]);
@@ -47,6 +53,8 @@ class Playstate : public our::State
         movementSystem.update(&world, (float)deltaTime);
         cameraController.update(&world, (float)deltaTime);
         playerController.update(&world, (float)deltaTime);
+        barracksController.update(&world, (float)deltaTime);
+        cannonController.update(&world, (float)deltaTime);
         // And finally we use the renderer system to draw the scene
         renderer.render(&world);
     }
@@ -58,6 +66,8 @@ class Playstate : public our::State
         // On exit, we call exit for the camera controller system to make sure that the mouse is unlocked
         cameraController.exit();
         playerController.exit();
+        barracksController.exit();
+        cannonController.exit();
         // and we delete all the loaded assets to free memory on the RAM and the VRAM
         our::clearAllAssets();
     }
@@ -65,7 +75,7 @@ class Playstate : public our::State
     void onImmediateGui() override
     {
         our::CameraComponent *camera;
-        our::FreeCameraControllerComponent* controller;
+        our::FreeCameraControllerComponent *controller;
         // We use ImGui to draw some debug information
         ImGui::Begin("Debug");
         for (auto entity : world.getEntities())
@@ -79,7 +89,6 @@ class Playstate : public our::State
         ImGui::DragFloat3("Camera position", &camera->getOwner()->localTransform.position.x);
         ImGui::DragFloat3("Camera speed", &controller->positionSensitivity.x);
         ImGui::DragFloat("Camera speedup faactor", &controller->speedupFactor);
-
 
         ImGui::End();
     }

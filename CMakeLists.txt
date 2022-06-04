@@ -75,10 +75,14 @@ set(COMMON_SOURCES
         source/common/components/light.cpp
         source/common/components/player-controller.hpp
         source/common/components/player-controller.cpp
+        source/common/components/cannon-controller.hpp
+        source/common/components/cannon-controller.cpp
         source/common/components/mesh-renderer.hpp
         source/common/components/mesh-renderer.cpp
         source/common/components/free-camera-controller.hpp
         source/common/components/free-camera-controller.cpp
+        source/common/components/barracks-controller.cpp
+        source/common/components/barracks-controller.hpp
         source/common/components/movement.hpp
         source/common/components/movement.cpp
         source/common/components/component-deserializer.hpp
@@ -87,6 +91,8 @@ set(COMMON_SOURCES
         source/common/systems/forward-renderer.cpp
         source/common/systems/free-camera-controller.hpp
         source/common/systems/player-controller.hpp
+        source/common/systems/barracks-controller.hpp
+        source/common/systems/cannon-controller.hpp
         source/common/systems/movement.hpp
 )
 
