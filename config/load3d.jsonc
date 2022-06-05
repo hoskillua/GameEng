@@ -297,7 +297,7 @@
                     },
                     {
                         "type": "Light",
-                        "lightType": "spot",
+                        "lightType": "point",
                         "diffusion":[1,1,1],
                         "specular":[1,1,1],
                         "attenuation":[0,0.08,0.5],

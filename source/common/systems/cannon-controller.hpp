@@ -72,7 +72,7 @@ namespace our
                         }
                         else
                         {
-                            controller->timeElapsed += 0.001f;
+                            controller->timeElapsed += deltaTime * 0.3f;
                         }
                         glm::vec3 direction = glm::normalize(playerPosition - position);
                         // rotate y to direction
