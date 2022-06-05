@@ -342,6 +342,168 @@
                 ]
             },
             {
+                "position": [-100,0, -100],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [50,0, 10],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [-100,0, 100],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [40,0, -200],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [40,0, 200],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [100,0, 100],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [40,0, 0],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [0,0, 100],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [40,0, -100],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [-40,0, 100],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+
+
+            {
                 "position": [-15, 0, 55],
                 "rotation": [0, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
