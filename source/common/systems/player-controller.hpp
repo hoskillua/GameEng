@@ -62,7 +62,11 @@ namespace our
             glm::vec3 positionPrev = position;
             glm::vec3 rotationPrev = rotation;
 
-
+            if(controller->money>=100)
+            {
+                controller->flag_won=true;
+                std::cout << "You won!" << std::endl;
+            }
 
             // If the left mouse button is pressed, we get the change in the mouse location
             // and use it to update the camera rotation

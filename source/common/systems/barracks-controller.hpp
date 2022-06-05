@@ -49,14 +49,8 @@ namespace our
 
                     if (glm::distance(playerPos, position) < controller->radius && !controller->is_money_taken)
                     {
-
                         controller->is_money_taken = true;
-                        controller->money=rand()%100;
-                        player_entity->getComponent<PlayerControllerComponent>()->money += controller->money+10;
-                        std::cout << "player money=" << player_entity->getComponent<PlayerControllerComponent>()->money << std::endl;
-
-                        std::cout << "You have taken " << controller->money << "$" << std::endl;
-
+                        player_entity->getComponent<PlayerControllerComponent>()->money += controller->money;
                         world->markForRemoval(entity);
                     }
 
