@@ -302,29 +302,29 @@
 
                 ]
             },
-            // {
-            //     "position": [-25, 0, -15],
-            //     "rotation": [0, 0, 0],
-            //     "scale": [0.05, 0.05, 0.05],
-            //     "radius": 6,
-            //     "components": [
-            //         {
-            //             "type": "CannonMovement",
-            //             "angularVelocity": [0, 20, 0],
-            //             "range": 35.0
-            //         },
-            //         {
-            //             "type": "Mesh Renderer",
-            //             "mesh": "cannon",
-            //             "material": "cannon"
-            //         },
-            //         {
-            //             "type": "Movement",
-            //             "linearVelocity": [0, 0, 0],
-            //             "angularVelocity": [0, 20, 0]
-            //         }
-            //     ]
-            // },
+            {
+                "position": [-25, 0, -15],
+                "rotation": [0, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 6,
+                "components": [
+                    {
+                        "type": "CannonMovement",
+                        "angularVelocity": [0, 20, 0],
+                        "range": 35.0
+                    },
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "cannon",
+                        "material": "cannon"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, 0],
+                        "angularVelocity": [0, 20, 0]
+                    }
+                ]
+            },
             {
                 "position": [40,0, 100],
                 "rotation": [-90, 0, 0],
@@ -341,25 +341,25 @@
                     }
                 ]
             },
-            // {
-            //     "position": [-15, 0, 55],
-            //     "rotation": [0, 0, 0],
-            //     "scale": [0.05, 0.05, 0.05],
-            //     "radius": 6,
-            //     "components": [
-            //         {
-            //             "type": "CannonMovement",
-            //             "angularVelocity": [0, 20, 0],
-            //             "range": 35.0
-            //         },
+            {
+                "position": [-15, 0, 55],
+                "rotation": [0, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 6,
+                "components": [
+                    {
+                        "type": "CannonMovement",
+                        "angularVelocity": [0, 20, 0],
+                        "range": 35.0
+                    },
 
-            //         {
-            //             "type": "Mesh Renderer",
-            //             "mesh": "cannon",
-            //             "material": "cannon"
-            //         }
-            //     ]
-            // },
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "cannon",
+                        "material": "cannon"
+                    }
+                ]
+            },
             {
                 "position": [55, 0, 55],
                 "rotation": [0, 0, 0],
