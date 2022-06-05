@@ -47,9 +47,6 @@
 
             },
             "meshes":{
-                "cube": "assets/models/cube.obj",
-                "monkey": "assets/models/monkey.obj",
-                "plane": "assets/models/plane.obj",
                 "plane2": "assets/models/plane2.obj",
                 "sphere": "assets/models/sphere.obj",
                 "warhouse": "assets/models/well-low-rus-obj.obj",
@@ -71,42 +68,6 @@
                 }
             },
             "materials":{
-                "metal":{
-                    "type": "tinted",
-                    "shader": "tinted",
-                    "pipelineState": {
-                        "faceCulling":{
-                            "enabled": false
-                        },
-                        "depthTesting":{
-                            "enabled": true
-                        }
-                    },
-                    "tint": [0.45, 0.4, 0.5, 1]
-                },
-                
-                "glass":{
-                    "type": "textured",
-                    "shader": "textured",
-                    "pipelineState": {
-                        "faceCulling":{
-                            "enabled": false
-                        },
-                        "depthTesting":{
-                            "enabled": true
-                        },
-                        "blending":{
-                            "enabled": true,
-                            "sourceFactor": "GL_SRC_ALPHA",
-                            "destinationFactor": "GL_ONE_MINUS_SRC_ALPHA"
-                        },
-                        "depthMask": false
-                    },
-                    "transparent": true,
-                    "tint": [1, 1, 1, 1],
-                    "texture": "glass",
-                    "sampler": "pixelated"
-                },
                 "cannon":{
                     "type": "lit",
                     "shader": "lit",
@@ -207,21 +168,6 @@
                     "emissive":"emissive",
                     "sampler": "repeater"
                 },
-                "monkey":{
-                    "type": "textured",
-                    "shader": "textured",
-                    "pipelineState": {
-                        "faceCulling":{
-                            "enabled": false
-                        },
-                        "depthTesting":{
-                            "enabled": true
-                        }
-                    },
-                    "tint": [1, 1, 1, 1],
-                    "texture": "monkey",
-                    "sampler": "default"
-                },
                 "moon":{
                     "type": "lit",
                     "shader": "lit",
@@ -275,8 +221,8 @@
                 ]
             },
             {
-                "position": [10, 0, 10],
-                "rotation": [0, 0, 0],
+                "position": [30, 0, 15],
+                "rotation": [0, 60, 0],
                 "scale": [1.5, 0.7, 0.7],
                 "radius": 8,
                 "name":"player",
@@ -307,8 +253,25 @@
 
                 ]
             },
+            {   // the warhous to return back when win
+                "position": [0, 0, 0],
+                "rotation": [0, 60, 0],
+                "scale": [0.1, 0.1, 0.1],
+                "radius": 12,
+                "components": [
+                
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "warhouse",
+                        "material": "warhouse"
+                    },
+                    {
+                        "type": "warhouse controller"
+                    }
+                ]
+            },
             {
-                "position": [-25, 0, -15],
+                "position": [30, 0, -60],
                 "rotation": [0, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
                 "radius": 6,
@@ -340,7 +303,7 @@
                 ]
             },
             {
-                "position": [40,0, 100],
+                "position": [90,0, -90],
                 "rotation": [-90, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
                 "radius": 4,
@@ -356,115 +319,35 @@
                 ]
             },
             {
-                "position": [-100,0, -100],
-                "rotation": [-90, 0, 0],
+                "position": [0, 0, 60],
+                "rotation": [0, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
-                "radius": 4,
+                "radius": 6,
                 "components": [
                     {
-                        "type": "Mesh Renderer",
-                        "mesh": "barracks" ,
-                        "material": "barracks"
+                        "type": "CannonMovement",
+                        "angularVelocity": [0, 20, 0],
+                        "range": 45.0
                     },
                     {
-                        "type": "barracks controller"
-                    }
-                ]
-            },
-            {
-                "position": [50,0, 10],
-                "rotation": [-90, 0, 0],
-                "scale": [0.05, 0.05, 0.05],
-                "radius": 4,
-                "components": [
-                    {
                         "type": "Mesh Renderer",
-                        "mesh": "barracks" ,
-                        "material": "barracks"
+                        "mesh": "cannon",
+                        "material": "cannon"
                     },
                     {
-                        "type": "barracks controller"
-                    }
-                ]
-            },
-            {
-                "position": [-100,0, 100],
-                "rotation": [-90, 0, 0],
-                "scale": [0.05, 0.05, 0.05],
-                "radius": 4,
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "barracks" ,
-                        "material": "barracks"
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, 0],
+                        "angularVelocity": [0, 20, 0]
                     },
                     {
-                        "type": "barracks controller"
+                        "type": "Light",
+                        "lightType": "point",
+                        "diffusion":[1,0.2,0.2],
+                        "specular":[1,0.2,0.2],
+                        "attenuation":[0, 0.05, 0.5],
+                        "cone_angles":[3.14,10]
                     }
-                ]
-            },
-            {
-                "position": [40,0, -200],
-                "rotation": [-90, 0, 0],
-                "scale": [0.05, 0.05, 0.05],
-                "radius": 4,
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "barracks" ,
-                        "material": "barracks"
-                    },
-                    {
-                        "type": "barracks controller"
-                    }
-                ]
-            },
-            {
-                "position": [40,0, 200],
-                "rotation": [-90, 0, 0],
-                "scale": [0.05, 0.05, 0.05],
-                "radius": 4,
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "barracks" ,
-                        "material": "barracks"
-                    },
-                    {
-                        "type": "barracks controller"
-                    }
-                ]
-            },
-            {
-                "position": [100,0, 100],
-                "rotation": [-90, 0, 0],
-                "scale": [0.05, 0.05, 0.05],
-                "radius": 4,
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "barracks" ,
-                        "material": "barracks"
-                    },
-                    {
-                        "type": "barracks controller"
-                    }
-                ]
-            },
-            {
-                "position": [40,0, 0],
-                "rotation": [-90, 0, 0],
-                "scale": [0.05, 0.05, 0.05],
-                "radius": 4,
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "barracks" ,
-                        "material": "barracks"
-                    },
-                    {
-                        "type": "barracks controller"
-                    }
+
                 ]
             },
             {
@@ -484,39 +367,7 @@
                 ]
             },
             {
-                "position": [40,0, -100],
-                "rotation": [-90, 0, 0],
-                "scale": [0.05, 0.05, 0.05],
-                "radius": 4,
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "barracks" ,
-                        "material": "barracks"
-                    },
-                    {
-                        "type": "barracks controller"
-                    }
-                ]
-            },
-            {
-                "position": [-40,0, 100],
-                "rotation": [-90, 0, 0],
-                "scale": [0.05, 0.05, 0.05],
-                "radius": 4,
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "barracks" ,
-                        "material": "barracks"
-                    },
-                    {
-                        "type": "barracks controller"
-                    }
-                ]
-            },
-            {
-                "position": [-15, 0, 55],
+                "position": [100, 0, 40],
                 "rotation": [0, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
                 "radius": 6,
@@ -532,6 +383,11 @@
                         "material": "cannon"
                     },
                     {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, 0],
+                        "angularVelocity": [0, 20, 0]
+                    },
+                    {
                         "type": "Light",
                         "lightType": "point",
                         "diffusion":[1,0.2,0.2],
@@ -539,22 +395,358 @@
                         "attenuation":[0, 0.05, 0.5],
                         "cone_angles":[3.14,10]
                     }
+
                 ]
             },
-            {   // the warhous to return back when win
-                "position": [55, 0, 55],
-                "rotation": [0, 0, 0],
-                "scale": [0.1, 0.1, 0.1],
-                "radius": 12,
+            {
+                "position": [160,0, 40],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
                 "components": [
-                
                     {
                         "type": "Mesh Renderer",
-                        "mesh": "warhouse",
-                        "material": "warhouse"
+                        "mesh": "barracks" ,
+                        "material": "barracks"
                     },
                     {
-                        "type": "warhouse controller"
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [130, 0, -100],
+                "rotation": [0, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 6,
+                "components": [
+                    {
+                        "type": "CannonMovement",
+                        "angularVelocity": [0, 20, 0],
+                        "range": 45.0
+                    },
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "cannon",
+                        "material": "cannon"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, 0],
+                        "angularVelocity": [0, 20, 0]
+                    },
+                    {
+                        "type": "Light",
+                        "lightType": "point",
+                        "diffusion":[1,0.2,0.2],
+                        "specular":[1,0.2,0.2],
+                        "attenuation":[0, 0.05, 0.5],
+                        "cone_angles":[3.14,10]
+                    }
+
+                ]
+            },
+            {
+                "position": [200,0, -110],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [300, 0, 40],
+                "rotation": [0, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 6,
+                "components": [
+                    {
+                        "type": "CannonMovement",
+                        "angularVelocity": [0, 20, 0],
+                        "range": 45.0
+                    },
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "cannon",
+                        "material": "cannon"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, 0],
+                        "angularVelocity": [0, 20, 0]
+                    },
+                    {
+                        "type": "Light",
+                        "lightType": "point",
+                        "diffusion":[1,0.2,0.2],
+                        "specular":[1,0.2,0.2],
+                        "attenuation":[0, 0.05, 0.5],
+                        "cone_angles":[3.14,10]
+                    }
+
+                ]
+            },
+            {
+                "position": [500,0, 70],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [300, 0, 200],
+                "rotation": [0, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 6,
+                "components": [
+                    {
+                        "type": "CannonMovement",
+                        "angularVelocity": [0, 20, 0],
+                        "range": 45.0
+                    },
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "cannon",
+                        "material": "cannon"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, 0],
+                        "angularVelocity": [0, 20, 0]
+                    },
+                    {
+                        "type": "Light",
+                        "lightType": "point",
+                        "diffusion":[1,0.2,0.2],
+                        "specular":[1,0.2,0.2],
+                        "attenuation":[0, 0.05, 0.5],
+                        "cone_angles":[3.14,10]
+                    }
+
+                ]
+            },
+            {
+                "position": [250,0, 80],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+             {
+                "position": [30, 0, -60],
+                "rotation": [0, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 6,
+                "components": [
+                    {
+                        "type": "CannonMovement",
+                        "angularVelocity": [0, 20, 0],
+                        "range": 45.0
+                    },
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "cannon",
+                        "material": "cannon"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, 0],
+                        "angularVelocity": [0, 20, 0]
+                    },
+                    {
+                        "type": "Light",
+                        "lightType": "point",
+                        "diffusion":[1,0.2,0.2],
+                        "specular":[1,0.2,0.2],
+                        "attenuation":[0, 0.05, 0.5],
+                        "cone_angles":[3.14,10]
+                    }
+
+                ]
+            },
+            {
+                "position": [30,0, -90],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [-150, 0, 60],
+                "rotation": [0, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 6,
+                "components": [
+                    {
+                        "type": "CannonMovement",
+                        "angularVelocity": [0, 20, 0],
+                        "range": 45.0
+                    },
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "cannon",
+                        "material": "cannon"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, 0],
+                        "angularVelocity": [0, 20, 0]
+                    },
+                    {
+                        "type": "Light",
+                        "lightType": "point",
+                        "diffusion":[1,0.2,0.2],
+                        "specular":[1,0.2,0.2],
+                        "attenuation":[0, 0.05, 0.5],
+                        "cone_angles":[3.14,10]
+                    }
+
+                ]
+            },
+            {
+                "position": [-200,0, 65],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [-150, 0, 20],
+                "rotation": [0, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 6,
+                "components": [
+                    {
+                        "type": "CannonMovement",
+                        "angularVelocity": [0, 20, 0],
+                        "range": 45.0
+                    },
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "cannon",
+                        "material": "cannon"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, 0],
+                        "angularVelocity": [0, 20, 0]
+                    },
+                    {
+                        "type": "Light",
+                        "lightType": "point",
+                        "diffusion":[1,0.2,0.2],
+                        "specular":[1,0.2,0.2],
+                        "attenuation":[0, 0.05, 0.5],
+                        "cone_angles":[3.14,10]
+                    }
+
+                ]
+            },
+            {
+                "position": [-260,0, 100],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [-220, 0, 90],
+                "rotation": [0, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 6,
+                "components": [
+                    {
+                        "type": "CannonMovement",
+                        "angularVelocity": [0, 20, 0],
+                        "range": 45.0
+                    },
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "cannon",
+                        "material": "cannon"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, 0],
+                        "angularVelocity": [0, 20, 0]
+                    },
+                    {
+                        "type": "Light",
+                        "lightType": "point",
+                        "diffusion":[1,0.2,0.2],
+                        "specular":[1,0.2,0.2],
+                        "attenuation":[0, 0.05, 0.5],
+                        "cone_angles":[3.14,10]
+                    }
+
+                ]
+            },
+            {
+                "position": [-220,0, 160],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
                     }
                 ]
             },

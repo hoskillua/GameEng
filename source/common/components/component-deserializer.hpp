@@ -8,6 +8,7 @@
 #include "light.hpp"
 #include "player-controller.hpp"
 #include "barracks-controller.hpp"
+#include "warhouse-controller.hpp"
 #include "cannon-controller.hpp"
 
 namespace our {
@@ -33,6 +34,8 @@ namespace our {
             component = entity->addComponent<BarracksControllerComponent>();
         } else if (type == CannonControllerComponent::getID()) {
             component = entity->addComponent<CannonControllerComponent>();
+        } else if (type == WarhouseControllerComponent::getID()) {
+            component = entity->addComponent<WarhouseControllerComponent>();
         }
 
         if(component) component->deserialize(data);
