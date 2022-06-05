@@ -65,7 +65,7 @@ namespace our
             if(controller->money>=100)
             {
                 controller->flag_won=true;
-                std::cout << "You won!" << std::endl;
+                app->changeState("win-state");
             }
 
             // If the left mouse button is pressed, we get the change in the mouse location
