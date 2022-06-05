@@ -243,40 +243,39 @@ namespace our {
             if (opaqueCommands[i].material->material_type() == "lit")
             {
             
-                // //if it is lit material, send data of the light component
-                // opaqueCommands[i].material->shader->set("light_count" , glm::int16( lights.size()) +1 );
+                //if it is lit material, send data of the light component
+                opaqueCommands[i].material->shader->set("light_count" , glm::int16( lights.size()) +1 );
 
 
-                // //Add all lights 
-                // for (int j = 0; j < lights.size(); j++)
-                // {
+                //Add all lights 
+                for (int j = 0; j < lights.size(); j++)
+                {
                             
-                //     opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].type" , lights[j]->type);
-                //     opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].position" ,  lights[j]->getOwner()->localTransform.position );
-                //     opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].direction" , lights[j]->getOwner()->localTransform.rotation);
-                //     opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].diffusion" , lights[j]->diffusion);
-                //     opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].specular" , lights[j]->specular);
-                //     opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].attenuation" , lights[j]->attenuation);
-                //     opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].cone_angles" , glm::vec2(glm::radians(90.0f), glm::radians(90.0f)));
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].type" , lights[j]->type);
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].position" ,  lights[j]->getOwner()->localTransform.position );
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].direction" , lights[j]->getOwner()->localTransform.rotation);
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].diffusion" , lights[j]->diffusion);
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].specular" , lights[j]->specular);
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].attenuation" , lights[j]->attenuation);
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].cone_angles" , glm::vec2(glm::radians(90.0f), glm::radians(90.0f)));
 
 
 
 
-                // }                
+                }                
 
-                opaqueCommands[i].material->shader->set("light_count" , glm::int16( 1) );
 
                 opaqueCommands[i].material->shader->set("sky.top" , glm::vec3(1,1,1.0));
                 opaqueCommands[i].material->shader->set("sky.middle" , glm::vec3(0.5,0.4,0.5));
                 opaqueCommands[i].material->shader->set("sky.bottom" , glm::vec3(0.1,0.1,0));
 
-                opaqueCommands[i].material->shader->set("lights[0].type", 1);
-                opaqueCommands[i].material->shader->set( "lights[0].position", glm::vec3( 0, 1, 0));
-                opaqueCommands[i].material->shader->set( "lights[0].direction",glm::vec3( 1, 0, 0));
-                opaqueCommands[i].material->shader->set( "lights[0].diffusion",glm::vec3( 1, 1, 1));
-                opaqueCommands[i].material->shader->set( "lights[0].specular", glm::vec3(1, 1, 1));
-                opaqueCommands[i].material->shader->set( "lights[0].attenuation", glm::vec3(0.0, 0.01, 0.5));
-                opaqueCommands[i].material->shader->set( "lights[0].cone_angles", glm::vec2(glm::radians(10.0f), glm::radians(20.0f)));
+                opaqueCommands[i].material->shader->set("lights[1].type", 1);
+                opaqueCommands[i].material->shader->set( "lights[1].position", glm::vec3( 0, 1, 0));
+                opaqueCommands[i].material->shader->set( "lights[1].direction",glm::vec3( 1, 0, 0));
+                opaqueCommands[i].material->shader->set( "lights[1].diffusion",glm::vec3( 1, 0, 0));
+                opaqueCommands[i].material->shader->set( "lights[1].specular", glm::vec3(1, 0, 0));
+                opaqueCommands[i].material->shader->set( "lights[1].attenuation", glm::vec3(0.0, 0.05, 0.5));
+                opaqueCommands[i].material->shader->set( "lights[1].cone_angles", glm::vec2(glm::radians(10.0f), glm::radians(20.0f)));
 
 
 
