@@ -16,7 +16,8 @@ namespace our {
         float AAccel = 1.0f;
         float radius = 5.0f;
         float health = 0.1f;
-        int money=9;
+        int money=0;
+        bool flag_won=false;
         // The ID of this component type is "Player"
         static std::string getID() { return "Player Controller"; }
 

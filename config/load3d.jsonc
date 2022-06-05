@@ -342,6 +342,168 @@
                 ]
             },
             {
+                "position": [-100,0, -100],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [50,0, 10],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [-100,0, 100],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [40,0, -200],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [40,0, 200],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [100,0, 100],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [40,0, 0],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [0,0, 100],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [40,0, -100],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+            {
+                "position": [-40,0, 100],
+                "rotation": [-90, 0, 0],
+                "scale": [0.05, 0.05, 0.05],
+                "radius": 4,
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "barracks" ,
+                        "material": "barracks"
+                    },
+                    {
+                        "type": "barracks controller"
+                    }
+                ]
+            },
+
+
+            {
                 "position": [-15, 0, 55],
                 "rotation": [0, 0, 0],
                 "scale": [0.05, 0.05, 0.05],
@@ -373,25 +535,25 @@
                         "material": "warhouse"
                     }
                 ]
+            },
+            {
+                "position": [0, 90, 0],
+                "rotation": [0, 90, 0],
+                "scale": [0.1, 0.1, 0.1],
+                "radius": 12,
+                "components": [
+                    {
+                        "type": "Light",
+                        "lightType": "directional",
+                        "diffusion":[0.5,0.5,0.5],
+                        "specular":[0.5,0.5,0.5],
+                        "attenuation":[0,0,0],
+                        "cone_angles":[0,0,0]
+
+                    }
+
+                ]
             }
-            // {
-            //     "position": [20, 40, -20],
-            //     "rotation": [0, 90, 0],
-            //     "scale": [0.1, 0.1, 0.1],
-            //     "radius": 12,
-            //     "components": [
-            //         {
-            //             "type": "Light",
-            //             "lightType": "directional",
-            //             "diffusion":[1,1,1],
-            //             "specular":[1,1,1],
-            //             "attenuation":[1,0,0],
-            //             "cone_angles":[0,0,0]
-
-            //         }
-
-            //     ]
-            // }
         ]
     }
 }
