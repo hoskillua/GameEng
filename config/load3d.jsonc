@@ -572,7 +572,25 @@
                     }
 
                 ]
-            }
+            }//,
+            // {
+            //     "position": [20, 1000, -20],
+            //     "rotation": [0, 90, 0],
+            //     "scale": [0.1, 0.1, 0.1],
+            //     "radius": 12,
+            //     "components": [
+            //         {
+            //             "type": "Light",
+            //             "lightType": "directional",
+            //             "diffusion":[1,1,1],
+            //             "specular":[1,1,1],
+            //             "attenuation":[1,0,0],
+            //             "cone_angles":[0,0,0]
+
+            //         }
+
+            //     ]
+            // }
         ]
     }
 }
