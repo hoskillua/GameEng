@@ -58,7 +58,7 @@ class Playstate : public our::State
         playerController.update(&world, (float)deltaTime);
         barracksController.update(&world, (float)deltaTime);
         cannonController.update(&world, (float)deltaTime);
-        bulletController.update(&world, (float)deltaTime);
+        bulletController.update(&world, (float)deltaTime, &renderer);
         // And finally we use the renderer system to draw the scene
         world.deleteMarkedEntities();
         renderer.render(&world);

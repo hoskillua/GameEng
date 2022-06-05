@@ -23,6 +23,6 @@ void main(){
     float r = texture(tex, tex_coord + vec2(-STRENGTH, 0)).r;
     float g = texture(tex, tex_coord).g;
     float b = texture(tex, tex_coord + vec2(STRENGTH, 0)).b;
-    frag_color = vec4(r, g, b, 1.0);
+    frag_color = vec4(r+0.2, g-0.1, b-0.1, 1.0);
 
 }

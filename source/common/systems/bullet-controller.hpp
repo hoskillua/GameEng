@@ -4,6 +4,8 @@
 #include "../components/mesh-renderer.hpp"
 #include "../components/cannon-controller.hpp"
 #include "../components/bullet-controller.hpp"
+#include "../systems/forward-renderer.hpp"
+
 #include "../application.hpp"
 
 #include <stdlib.h>
@@ -30,7 +32,7 @@ namespace our
         }
 
         // This should be called every frame to update all entities containing a FreeCameraControllerComponent
-        void update(World *world, float deltaTime)
+        void update(World *world, float deltaTime, ForwardRenderer *renderer)
         {
 
             BulletControllerComponent *controller = nullptr;
@@ -49,7 +51,7 @@ namespace our
             for (auto entity : world->getEntities())
             {
                 controller = entity->getComponent<BulletControllerComponent>();
-                
+
                 if (controller)
                 {
                     Entity *entity = controller->getOwner();
@@ -59,10 +61,21 @@ namespace our
                         glm::vec3 direction = glm::normalize(controller->endPosition - controller->startPosition);
                         position += direction * controller->velocity * deltaTime;
                     }
-                    else{
+                    else if (!controller->postprocessEnabled){
                         playercomponent->health -= controller->damage;
-                        playermesh->material->transparent = true;
-                        world->markForRemoval(entity);
+                        renderer->updatePostprocess(controller->postprocess);
+                        controller->postprocessEnabled = true;
+                    }
+                    if(controller->postprocessEnabled){
+                        if(controller->postprocessElapsedTime > controller->postprocessTime)
+                        {
+                            renderer->updatePostprocess();
+                            controller->postprocessEnabled = false;
+                            world->markForRemoval(entity);
+                        }
+                        else{
+                            controller->postprocessElapsedTime += 0.005f;
+                        }
                     }
                 }
             }
