@@ -283,7 +283,7 @@
                 "components": [
                     {
                         "type": "Player Controller",
-                        "VerticalSpeed": 24,
+                        "VerticalSpeed": 30,
                         "VerticalAcceleration": 20,
                         "AngularAcceleration": 0.5,
                         "AngularSpeed": 0.1,
@@ -316,7 +316,7 @@
                     {
                         "type": "CannonMovement",
                         "angularVelocity": [0, 20, 0],
-                        "range": 35.0
+                        "range": 45.0
                     },
                     {
                         "type": "Mesh Renderer",
@@ -515,7 +515,7 @@
                     {
                         "type": "CannonMovement",
                         "angularVelocity": [0, 20, 0],
-                        "range": 35.0
+                        "range": 45.0
                     },
                     {
                         "type": "Mesh Renderer",
