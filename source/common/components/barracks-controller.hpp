@@ -16,7 +16,7 @@ namespace our
         public:
             float radius=20.0f;
             bool is_money_taken=false;
-            int money=rand()%100;
+            int money=10;
             static std::string getID() { return "barracks controller"; }
 
     void deserialize(const nlohmann::json& data){}
