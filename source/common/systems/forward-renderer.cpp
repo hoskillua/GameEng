@@ -252,22 +252,20 @@ namespace our {
                 {
                             
                     opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].type" , lights[j]->type);
-                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].position" ,  lights[j]->getOwner()->localTransform.position );
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].position" ,  lights[j]->getOwner()->localTransform.position);
                     opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].direction" , lights[j]->getOwner()->localTransform.rotation);
                     opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].diffusion" , lights[j]->diffusion);
                     opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].specular" , lights[j]->specular);
                     opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].attenuation" , lights[j]->attenuation);
-                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].cone_angles" , glm::vec2(glm::radians(90.0f), glm::radians(90.0f)));
-
-
+                    opaqueCommands[i].material->shader->set("lights[" + std::to_string(j) + "].cone_angles" , glm::vec2(glm::radians(lights[j]->cone_angles[0]), glm::radians(lights[j]->cone_angles[1])));
 
 
                 }
 
 
-                opaqueCommands[i].material->shader->set("sky.top" , glm::vec3(1,1,1.0));
-                opaqueCommands[i].material->shader->set("sky.middle" , glm::vec3(0.5,0.4,0.5));
-                opaqueCommands[i].material->shader->set("sky.bottom" , glm::vec3(0.1,0.1,0));
+                opaqueCommands[i].material->shader->set("sky.top" , glm::vec3(1, 1, 1.0));
+                opaqueCommands[i].material->shader->set("sky.middle" , glm::vec3( 1, 1, 1));
+                opaqueCommands[i].material->shader->set("sky.bottom" , glm::vec3(0.1, 0.1, 0.0));
 
 
 
