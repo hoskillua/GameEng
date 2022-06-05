@@ -89,13 +89,14 @@ namespace our
             bullet->name = "bullet";
             bullet->localTransform.scale = glm::vec3(-0.04f, 0.04f, 0.04f);
             bullet->localTransform.position = position;
+            bullet->localTransform.position.y += 5.0f;
             bullet->localTransform.rotation = rotation;
             //bullet->localTransform.rotation.y -= glm::pi<float>() / 2.0f;
             // Add a BulletComponent to the entity
             MeshRendererComponent* mesh = bullet->addComponent<MeshRendererComponent>();
             mesh->deserializeDynamic("bullet","bullet");
             BulletControllerComponent* bulletController = bullet->addComponent<BulletControllerComponent>();
-            bulletController->deserializeDynamic(position, playerPosition, damage, 150.0f);
+            bulletController->deserializeDynamic(bullet->localTransform.position, playerPosition + glm::vec3(0,5.0f,0), damage, 150.0f);
         }
         // When the state exits, it should call this function to ensure the mouse is unlocked
         void exit()

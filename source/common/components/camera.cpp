@@ -13,8 +13,8 @@ namespace our {
         } else {
             cameraType = CameraType::PERSPECTIVE;
         }
-        near = data.value("near", 0.01f);
-        far = data.value("far", 100.0f);
+        near = data.value("near", -10000.0f);
+        far = data.value("far", 10000.0f);
         fovY = data.value("fovY", 90.0f) * (glm::pi<float>() / 180);
         orthoHeight = data.value("orthoHeight", 1.0f);
     }
