@@ -56,7 +56,7 @@ namespace our
                 {
                     Entity *entity = controller->getOwner();
                     glm::vec3 &position = entity->localTransform.position;
-                    if (glm::distance(position, controller->endPosition) > 1.0f)
+                    if (glm::distance(position, controller->endPosition) > 3.0f)
                     {
                         glm::vec3 direction = glm::normalize(controller->endPosition - controller->startPosition);
                         position += direction * controller->velocity * deltaTime;
