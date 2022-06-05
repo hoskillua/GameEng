@@ -200,6 +200,11 @@
                     },
                     "tint": [1, 1, 1, 1],
                     "texture": "grass",
+                    "diffusion": "grass",
+                    "specular": "grass",
+                    "ambient_occlusion": "grass",
+                    "roughness": "roughness",
+                    "emissive":"emissive",
                     "sampler": "repeater"
                 },
                 "monkey":{
@@ -501,8 +506,6 @@
                     }
                 ]
             },
-
-
             {
                 "position": [-15, 0, 55],
                 "rotation": [0, 0, 0],
@@ -514,11 +517,18 @@
                         "angularVelocity": [0, 20, 0],
                         "range": 35.0
                     },
-
                     {
                         "type": "Mesh Renderer",
                         "mesh": "cannon",
                         "material": "cannon"
+                    },
+                    {
+                        "type": "Light",
+                        "lightType": "point",
+                        "diffusion":[1,0.2,0.2],
+                        "specular":[1,0.2,0.2],
+                        "attenuation":[0, 0.05, 0.5],
+                        "cone_angles":[0,0,0]
                     }
                 ]
             },

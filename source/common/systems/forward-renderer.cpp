@@ -244,7 +244,7 @@ namespace our {
             {
             
                 //if it is lit material, send data of the light component
-                opaqueCommands[i].material->shader->set("light_count" , glm::int16( lights.size()) +1 );
+                opaqueCommands[i].material->shader->set("light_count" , glm::int16( lights.size()));
 
 
                 //Add all lights 
@@ -262,20 +262,12 @@ namespace our {
 
 
 
-                }                
+                }
 
 
                 opaqueCommands[i].material->shader->set("sky.top" , glm::vec3(1,1,1.0));
                 opaqueCommands[i].material->shader->set("sky.middle" , glm::vec3(0.5,0.4,0.5));
                 opaqueCommands[i].material->shader->set("sky.bottom" , glm::vec3(0.1,0.1,0));
-
-                opaqueCommands[i].material->shader->set("lights[1].type", 1);
-                opaqueCommands[i].material->shader->set( "lights[1].position", glm::vec3( 0, 1, 0));
-                opaqueCommands[i].material->shader->set( "lights[1].direction",glm::vec3( 1, 0, 0));
-                opaqueCommands[i].material->shader->set( "lights[1].diffusion",glm::vec3( 1, 0, 0));
-                opaqueCommands[i].material->shader->set( "lights[1].specular", glm::vec3(1, 0, 0));
-                opaqueCommands[i].material->shader->set( "lights[1].attenuation", glm::vec3(0.0, 0.05, 0.5));
-                opaqueCommands[i].material->shader->set( "lights[1].cone_angles", glm::vec2(glm::radians(10.0f), glm::radians(20.0f)));
 
 
 
