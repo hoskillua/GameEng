@@ -156,6 +156,11 @@ namespace our
                     }
                 }
             }
+           // if health is zero change the sence
+            if(controller->health <= 0)
+            {
+               app->changeState("texture-test");
+            }
 
             // A & D moves the player left or right
             // if(app->getKeyboard().isPressed(GLFW_KEY_LEFT)) position += right * (deltaTime * current_sensitivity.x);
