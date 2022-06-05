@@ -7,6 +7,8 @@
 #include <systems/free-camera-controller.hpp>
 #include <systems/player-controller.hpp>
 #include <systems/barracks-controller.hpp>
+#include <systems/warhouse-controller.hpp>
+
 #include <systems/cannon-controller.hpp>
 #include <systems/bullet-controller.hpp>
 #include <systems/movement.hpp>
@@ -21,6 +23,7 @@ class Playstate : public our::State
     our::FreeCameraControllerSystem cameraController;
     our::PlayerControllerSystem playerController;
     our::BarracksControllerSystem barracksController;
+    our::WarhouseControllerSystem warhouseController;
     our::CannonControllerSystem cannonController;
     our::BulletControllerSystem bulletController;
     our::MovementSystem movementSystem;
@@ -43,6 +46,7 @@ class Playstate : public our::State
         cameraController.enter(getApp());
         playerController.enter(getApp());
         barracksController.enter(getApp());
+        warhouseController.enter(getApp());
         cannonController.enter(getApp());
         bulletController.enter(getApp());
         // Then we initialize the renderer
@@ -57,6 +61,7 @@ class Playstate : public our::State
         cameraController.update(&world, (float)deltaTime);
         playerController.update(&world, (float)deltaTime);
         barracksController.update(&world, (float)deltaTime);
+        warhouseController.update(&world, (float)deltaTime);
         cannonController.update(&world, (float)deltaTime);
         bulletController.update(&world, (float)deltaTime, &renderer);
         // And finally we use the renderer system to draw the scene
@@ -72,6 +77,7 @@ class Playstate : public our::State
         cameraController.exit();
         playerController.exit();
         barracksController.exit();
+        warhouseController.exit();
         cannonController.exit();
         bulletController.exit();
         // and we delete all the loaded assets to free memory on the RAM and the VRAM

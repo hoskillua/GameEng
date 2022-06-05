@@ -2,6 +2,7 @@
 
 #include "../ecs/world.hpp"
 #include "../components/player-controller.hpp"
+#include "../components/camera.hpp"
 
 #include "../application.hpp"
 
@@ -34,14 +35,18 @@ namespace our
             // First of all, we search for an entity containing both a CameraComponent and a FreeCameraControllerComponent
             // As soon as we find one, we break
             PlayerControllerComponent *controller = nullptr;
+            CameraComponent *camera = nullptr;
             for (auto entity : world->getEntities())
             {
-                controller = entity->getComponent<PlayerControllerComponent>();
-                if (controller)
+                if(!camera)
+                    camera = entity->getComponent<CameraComponent>();
+                if(!controller)
+                    controller = entity->getComponent<PlayerControllerComponent>();
+                if (controller && camera)
                     break;
             }
             // If there is no entity with both a CameraComponent and a FreeCameraControllerComponent, we can do nothing so we return
-            if (!(controller))
+            if (!(controller) && !(camera))
                 return;
             // Get the entity that we found via getOwner of camera (we could use controller->getOwner())
             Entity *entity = controller->getOwner();
@@ -65,7 +70,7 @@ namespace our
             if(controller->money>=100)
             {
                 controller->flag_won=true;
-                app->changeState("win-state");
+                //app->changeState("win-state");
             }
 
             // If the left mouse button is pressed, we get the change in the mouse location
@@ -146,13 +151,14 @@ namespace our
             {
                 controller->Vspeed = 0.0f;
             }
+            if(rotation.y > glm::pi<float>() * 2) rotation.y -= glm::pi<float>() * 2;
+            if(rotation.y < 0) rotation.y += glm::pi<float>() * 2;
             for (auto entity : world->getEntities())
             {
-                if(entity != controller->getOwner() && entity->name != "ground" && entity->name != "bullet")
+                if(entity != controller->getOwner() && entity->name != "ground" && entity->name != "bullet" && entity->name != "camera")
                 {
                     glm::vec3 entityPos = entity->localTransform.position;
                     if(glm::distance(entityPos, position) < controller->getOwner()->radius + entity->radius)
-
                     {
                         position = positionPrev;
                         rotation = rotationPrev;
@@ -160,6 +166,9 @@ namespace our
                     }
                 }
             }
+            camera->getOwner()->localTransform.position.x = position.x;
+            camera->getOwner()->localTransform.position.z = position.z;
+
            // if health is zero change the sence
             if(controller->health <= 0)
             {
