@@ -263,6 +263,10 @@ namespace our {
                 }
 
 
+
+                // opaqueCommands[i].material->shader->set("sky.top" , glm::vec3(0,0,0.0));
+                // opaqueCommands[i].material->shader->set("sky.middle" , glm::vec3(0,0,0));
+                // opaqueCommands[i].material->shader->set("sky.bottom" , glm::vec3(0,0,0));
                 opaqueCommands[i].material->shader->set("sky.top" , glm::vec3(1, 1, 1.0));
                 opaqueCommands[i].material->shader->set("sky.middle" , glm::vec3( 1, 1, 1));
                 opaqueCommands[i].material->shader->set("sky.bottom" , glm::vec3(0.1, 0.1, 0.0));
