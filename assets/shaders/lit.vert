@@ -29,7 +29,7 @@ void main(){
     gl_Position = transform * vec4(position, 1.0);
     vs_out.color = color;
     vs_out.tex_coord = tex_coord;
-    vs_out.normal = normalize((M_IT * vec4(normal, 0.0)).xyz);
+    vs_out.normal = normalize((M * vec4(normal, 0.0)).xyz);
     vs_out.view = eye - world;
     vs_out.world = world;
 
