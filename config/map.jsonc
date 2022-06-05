@@ -287,11 +287,6 @@
                         "material": "cannon"
                     },
                     {
-                        "type": "Movement",
-                        "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 20, 0]
-                    },
-                    {
                         "type": "Light",
                         "lightType": "point",
                         "diffusion":[1,0.2,0.2],
@@ -333,11 +328,6 @@
                         "type": "Mesh Renderer",
                         "mesh": "cannon",
                         "material": "cannon"
-                    },
-                    {
-                        "type": "Movement",
-                        "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 20, 0]
                     },
                     {
                         "type": "Light",
@@ -383,11 +373,6 @@
                         "material": "cannon"
                     },
                     {
-                        "type": "Movement",
-                        "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 20, 0]
-                    },
-                    {
                         "type": "Light",
                         "lightType": "point",
                         "diffusion":[1,0.2,0.2],
@@ -429,11 +414,6 @@
                         "type": "Mesh Renderer",
                         "mesh": "cannon",
                         "material": "cannon"
-                    },
-                    {
-                        "type": "Movement",
-                        "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 20, 0]
                     },
                     {
                         "type": "Light",
@@ -479,11 +459,6 @@
                         "material": "cannon"
                     },
                     {
-                        "type": "Movement",
-                        "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 20, 0]
-                    },
-                    {
                         "type": "Light",
                         "lightType": "point",
                         "diffusion":[1,0.2,0.2],
@@ -525,11 +500,6 @@
                         "type": "Mesh Renderer",
                         "mesh": "cannon",
                         "material": "cannon"
-                    },
-                    {
-                        "type": "Movement",
-                        "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 20, 0]
                     },
                     {
                         "type": "Light",
@@ -574,11 +544,7 @@
                         "mesh": "cannon",
                         "material": "cannon"
                     },
-                    {
-                        "type": "Movement",
-                        "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 20, 0]
-                    },
+                   
                     {
                         "type": "Light",
                         "lightType": "point",
@@ -622,11 +588,7 @@
                         "mesh": "cannon",
                         "material": "cannon"
                     },
-                    {
-                        "type": "Movement",
-                        "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 20, 0]
-                    },
+                   
                     {
                         "type": "Light",
                         "lightType": "point",
@@ -670,11 +632,7 @@
                         "mesh": "cannon",
                         "material": "cannon"
                     },
-                    {
-                        "type": "Movement",
-                        "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 20, 0]
-                    },
+                   
                     {
                         "type": "Light",
                         "lightType": "point",
@@ -718,11 +676,7 @@
                         "mesh": "cannon",
                         "material": "cannon"
                     },
-                    {
-                        "type": "Movement",
-                        "linearVelocity": [0, 0, 0],
-                        "angularVelocity": [0, 20, 0]
-                    },
+                   
                     {
                         "type": "Light",
                         "lightType": "point",
