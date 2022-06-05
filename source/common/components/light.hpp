@@ -23,7 +23,7 @@ namespace our {
         glm::vec3 diffusion = {0,0,0};
         glm::vec3 specular = {0,0,0};
         glm::vec3 attenuation = {0,0,0};
-        glm::vec3 cone_angles = {0,0,0};
+        glm::vec2 cone_angles = {0,0};
     
         // The ID of this component type is "Light"
         static std::string getID() { return "Light"; }
