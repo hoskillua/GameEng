@@ -14,6 +14,10 @@ namespace our
         glm::vec3 endPosition;
         float damage = 0.05f;
         float velocity;
+        std::string postprocess = "assets/shaders/postprocess/damage.frag";
+        float postprocessTime = 0.15f;
+        float postprocessElapsedTime = 0.0f;
+        bool postprocessEnabled = false;
         // The ID of this component type is "Movement"
         static std::string getID() { return "Bullet Controller"; }
         // Reads linearVelocity & angularVelocity from the given json object

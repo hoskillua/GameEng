@@ -1,13 +1,13 @@
 #pragma once
 
 #include "../ecs/component.hpp"
-#include <stdlib.h>     
+#include <stdlib.h>
 
 #include <glm/mat4x4.hpp>
 
 
 
-namespace our 
+namespace our
 {
 
     class BarracksControllerComponent : public Component
@@ -23,12 +23,6 @@ namespace our
     //deconstructor
 
     };
-
-
-
-
-
-
 }
 
 
