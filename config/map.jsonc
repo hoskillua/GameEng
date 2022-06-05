@@ -192,7 +192,8 @@
         },
         "world":[
             {
-                "position": [0, 30, 20],
+                "name": "camera",
+                "position": [10, 0, 10],
                 "rotation": [-60,-30,0],
                 "components": [
                     {
