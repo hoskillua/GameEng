@@ -74,7 +74,7 @@ namespace our
                             world->markForRemoval(entity);
                         }
                         else{
-                            controller->postprocessElapsedTime += 0.005f;
+                            controller->postprocessElapsedTime += 0.01f;
                         }
                     }
                 }

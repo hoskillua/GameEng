@@ -146,6 +146,8 @@ namespace our
             {
                 controller->Vspeed = 0.0f;
             }
+            if(rotation.y > glm::pi<float>() * 2) rotation.y -= glm::pi<float>() * 2;
+            if(rotation.y < 0) rotation.y += glm::pi<float>() * 2;
             for (auto entity : world->getEntities())
             {
                 if(entity != controller->getOwner() && entity->name != "ground" && entity->name != "bullet")
