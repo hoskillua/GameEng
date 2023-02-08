@@ -12,8 +12,7 @@
 ![image](https://user-images.githubusercontent.com/57008633/172071919-560b682f-aede-4a94-80dd-8bdec6adb2b3.png)
 
 - Shoot Effect
-![image](https://user-images.githubusercontent.com/57008633/172071962-a0ff18ce-d02d-4af7-9b75-adf4a68b3cde.png)
-
-- GameOver Screen
 ![image](https://user-images.githubusercontent.com/57008633/172071932-17cf8356-c589-43c0-b4f5-c3828eb9def3.png)
 
+- GameOver Screen
+![image](https://user-images.githubusercontent.com/57008633/172071962-a0ff18ce-d02d-4af7-9b75-adf4a68b3cde.png)
